@@ -6,11 +6,11 @@ class CanvasController < ApplicationController
 
   def new
     @canva = Canva.new
+    @choice = params[:selection]
   end
 
   def show
     @canva = Canva.first
-    <% console %>
   end
 
   def create
@@ -23,5 +23,5 @@ class CanvasController < ApplicationController
   def canva_params
     params.require(:canva).permit(:image)
   end
-
+  
 end
