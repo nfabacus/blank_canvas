@@ -1,3 +1,5 @@
+require 'byebug'
+
 class CanvasController < ApplicationController
 
   def index
@@ -23,5 +25,5 @@ class CanvasController < ApplicationController
   def canva_params
     params.require(:canva).permit(:image)
   end
-  
+
 end
