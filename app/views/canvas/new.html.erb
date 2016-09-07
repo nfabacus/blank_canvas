@@ -1,1 +1,7 @@
 <div id="box1"><a href = 'canvas/new' id="box1"><img src ='/images/test.svg'></a></div>
+
+<%= form_for @canva do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.submit "Upload picture" %>
+<% end %>
