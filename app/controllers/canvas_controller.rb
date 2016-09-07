@@ -1,5 +1,3 @@
-require 'byebug'
-
 class CanvasController < ApplicationController
 
   def index
@@ -12,7 +10,7 @@ class CanvasController < ApplicationController
   end
 
   def show
-    @canva = Canva.find(params[:id])
+    @canva = Canva.first
   end
 
   def create
