@@ -1,6 +1,6 @@
 <% Miro.options[:method] = "histogram" %>
 <% Miro.options[:color_count] = 3 %>
-<% color = Miro::DominantColors.new("spec/carc.jpg").to_hex %>
+<% color = Miro::DominantColors.new(@canva.image.url(:medium)).to_hex %>
 
 <canvas id="canvas_1" width="50" height="50" style="background-color: <%= color[0] %>;"></canvas>
 <canvas width="50" height="50" style="background-color: <%= color[1] %>;"></canvas>

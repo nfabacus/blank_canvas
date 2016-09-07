@@ -9,12 +9,19 @@ class CanvasController < ApplicationController
   end
 
   def show
-    @canva = Canva.find(params[:id])
+    @canva = Canva.first
+    <% console %>
   end
 
   def create
-    @canva = Canva.new(params[:image])
-    redirect_to "show"
+    @canva = Canva.create(canva_params)
+    redirect_to "/canvas/#{@canva.id}"
+  end
+
+  private
+
+  def canva_params
+    params.require(:canva).permit(:image)
   end
 
 end

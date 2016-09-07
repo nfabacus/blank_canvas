@@ -17,8 +17,7 @@ feature 'Canvas' do
   scenario 'user uploads the picture' do
     visit "/canvas/new"
     page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
-    canv_div = page.find(:css, 'canvas#canvas_1')
-    puts canv_div.native.style('background-color')
+    # response.body.should have_xpath("//#canvas_1[@background-color => '#343434 ']")
     expect(page).to have_css("canvas_1", backgroundColor: "#020202")
   end
 end
