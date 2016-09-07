@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+
+ input[type="submit"]
+ {
+   background:url(images/test.svg);
+ }
