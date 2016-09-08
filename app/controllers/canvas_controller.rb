@@ -13,6 +13,8 @@ class CanvasController < ApplicationController
 
   def show
     @canva = Canva.find(params[:id])
+    redirect_to "canvas/#{@canva.id}"
+
   end
 
   def create
