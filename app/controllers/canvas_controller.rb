@@ -17,6 +17,7 @@ class CanvasController < ApplicationController
   end
 
   def create
+    #if !params[:image].blank?
     @canva = Canva.create(canva_params)
     if @canva.save
       redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
@@ -29,7 +30,9 @@ class CanvasController < ApplicationController
   private
 
   def canva_params
-    params.require(:canva).permit(:image, :selection)
+    if params[:canva].present?
+      params.require(:canva).permit(:image, :selection)
+    end
   end
 
 end
