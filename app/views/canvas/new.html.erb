@@ -10,7 +10,7 @@
 <%end%>
 
 <%= form_for @canva, html: {multipart: true} do |f| %>
-  <%= f.label :image %>
+  <input type="hidden" name="selection" value="<%= @choice %>">
   <%= f.file_field :image %>
   <%= f.submit "Upload picture" %>
 <% end %>
