@@ -10,7 +10,7 @@ class CanvasController < ApplicationController
   end
 
   def show
-    @canva = Canva.first
+    @canva = Canva.find(params[:id])
   end
 
   def create
