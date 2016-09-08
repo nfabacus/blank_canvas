@@ -1,13 +1,4 @@
-<% case @choice %>
-<%when '1'%>
- <%=render 'living_room_1' %>
-<%when '2'%>
- <%=render 'living_room_2' %>
-<%when '3'%>
- <%=render 'living_room_1' %>
-<%when '4'%>
-  <%=render 'living_room_1' %>
-<%end%>
+<%= render 'switch_room' %>
 
 <%= form_for @canva, html: {multipart: true} do |f| %>
   <input type="hidden" name="selection" value="<%= @choice %>">
