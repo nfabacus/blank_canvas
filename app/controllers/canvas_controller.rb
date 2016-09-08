@@ -15,7 +15,12 @@ class CanvasController < ApplicationController
 
   def create
     @canva = Canva.create(canva_params)
+    if @canva.save
     redirect_to "/canvas/#{@canva.id}"
+    else
+      flash[:notice] = "Please select correct format of a picture"
+    redirect_to "canvas/new"
+    end
   end
 
   private

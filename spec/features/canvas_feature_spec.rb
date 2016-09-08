@@ -15,19 +15,32 @@ feature 'Canvas' do
     expect(page).not_to have_selector("div#2")
   end
 
-  it 'a user can endorse a count', js: true do
-    visit '/'
-    click_button('first_svg')
-    expect(page).to have_content("1 endorsement")
-  end
+end
 
+feature 'uploading' do
   scenario 'user uploads the picture' do
     visit "/canvas/new"
     page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
     click_button "Upload picture"
-    cdiv = page.find(:css, "#canvas_1")
-    p cdiv
-    # response.body.should have_xpath("//#canvas_1[@background-color => '#343434 ']")
-    expect(page).to have_css("canvas_2", backgroundColor: "#82751f")
+    # cdiv = page.find(:css, "#canvas_1")
+    # whatever = execute_script("window.getComputedStyle(document.getElementById('canvas_2').style.backgroundColor")
+    # expect(whatever).to eq("rgb(165, 99, 95)")
+    expect(page).to have_selector("div#first")
   end
+
+  scenario 'user uploads the picture with incorrect format' do
+    visit "canvas/new"
+    page.attach_file "canva[image]", Rails.root + "spec/assets/ask.rb"
+    click_button "Upload picture"
+    expect(current_path).to eq new_canva_path
+    expect(page).to have_content("Please select correct format of a picture")
+  end
+
+  scenario 'user does not choose any picture' do
+    visit "canvas/new"
+    click_button "Upload picture"
+    expect(current_path).to eq new_canva_path
+    expect(page).to have_content("Please upload a picture")
+  end
+
 end
