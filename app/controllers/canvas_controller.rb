@@ -23,7 +23,8 @@ class CanvasController < ApplicationController
       redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
     else
       flash[:notice] = "Please select correct format of a picture"
-      redirect_to "canvas/new"
+      redirect_to "/canvas/new?selection=#{params[:selection]}"
+      # render :new
     end
   end
 
