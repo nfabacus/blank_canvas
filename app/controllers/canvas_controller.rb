@@ -1,5 +1,3 @@
-require 'byebug'
-
 class CanvasController < ApplicationController
 
   def index
@@ -13,8 +11,6 @@ class CanvasController < ApplicationController
 
   def show
     @canva = Canva.find(params[:id])
-    redirect_to "canvas/#{@canva.id}"
-
   end
 
   def create
@@ -25,7 +21,7 @@ class CanvasController < ApplicationController
   private
 
   def canva_params
-    params.require(:canva).permit(:image)
+    params.require(:canva).permit(:image, :selection)
   end
 
 end
