@@ -1,4 +1,5 @@
 class CanvasController < ApplicationController
+  include CreateColourPalette
 
   def index
 
@@ -10,12 +11,14 @@ class CanvasController < ApplicationController
   end
 
   def show
-    @canva = Canva.first
+    @choice = params[:selection]
+    @canva = Canva.find(params[:id])
+    @color = create_palette
   end
 
   def create
     @canva = Canva.create(canva_params)
-    redirect_to "/canvas/#{@canva.id}"
+    redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
   end
 
   private

@@ -1,16 +1,7 @@
-<% case @choice %>
-<%when '1'%>
- <%=render 'living_room_1' %>
-<%when '2'%>
- <%=render 'living_room_2' %>
-<%when '3'%>
- <%=render 'living_room_1' %>
-<%when '4'%>
-  <%=render 'living_room_1' %>
-<%end%>
+<%= render 'switch_room' %>
 
 <%= form_for @canva, html: {multipart: true} do |f| %>
-  <%= f.label :image %>
+  <input type="hidden" name="selection" value="<%= @choice %>">
   <%= f.file_field :image %>
   <%= f.submit "Upload picture" %>
 <% end %>
