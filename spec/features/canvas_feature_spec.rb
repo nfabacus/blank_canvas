@@ -33,13 +33,13 @@ feature 'uploading' do
     page.attach_file "canva[image]", Rails.root + "spec/assets/ask.rb"
     click_button "Upload picture"
     expect(current_path).to eq new_canva_path
-    expect(page).to have_content("Please select correct format of a picture")
+    expect(page).to have_content("Please select a valid picture")
   end
 
   scenario 'user does not choose any picture' do
     visit "/canvas/new"
     click_button "Upload picture"
-    expect(page).to have_content("Please upload a picture")
+    expect(page).to have_content("Please select a valid picture")
   end
 
 end

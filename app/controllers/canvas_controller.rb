@@ -17,14 +17,12 @@ class CanvasController < ApplicationController
   end
 
   def create
-    #if !params[:image].blank?
     @canva = Canva.create(canva_params)
     if @canva.save
       redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
     else
-      flash[:notice] = "Please select correct format of a picture"
+      flash[:notice] = "Please select a valid picture"
       redirect_to "/canvas/new?selection=#{params[:selection]}"
-      # render :new
     end
   end
 
