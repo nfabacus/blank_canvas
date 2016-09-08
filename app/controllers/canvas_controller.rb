@@ -1,4 +1,5 @@
 class CanvasController < ApplicationController
+  include CreateColourPalette
 
   def index
 
@@ -10,16 +11,18 @@ class CanvasController < ApplicationController
   end
 
   def show
+    @choice = params[:selection]
     @canva = Canva.find(params[:id])
+    @color = create_palette
   end
 
   def create
     @canva = Canva.create(canva_params)
     if @canva.save
-    redirect_to "/canvas/#{@canva.id}"
+      redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
     else
       flash[:notice] = "Please select correct format of a picture"
-    redirect_to "canvas/new"
+      redirect_to "canvas/new"
     end
   end
 

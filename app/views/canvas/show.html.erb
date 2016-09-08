@@ -1,8 +1,8 @@
-<% Miro.options[:method] = "histogram" %>
-<% Miro.options[:color_count] = 3 %>
+<%= render 'switch_room' %>
 
-<% @path = @canva.image.url %>
-<% color = Miro::DominantColors.new("#{Rails.root}" + '/public' + @path.split('?')[0]).to_hex %>
-<div id="first"><canvas id="canvas_1" width="50" height="50" style="background-color: <%= color[0] %>;"></canvas></div>
-<canvas id="canvas_2" width="50" height="50" style="background-color: <%= color[1] %>;"></canvas>
-<canvas id="canvas_3" width="50" height="50" style="background-color: <%= color[2] %>;"></canvas>
+<%= image_tag @canva.image.url(:medium) %>
+
+
+<div id="first"><canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas><div>
+<canvas width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
+<canvas width="50" height="50" style="background-color: <%= @color[2] %>;"></canvas>
