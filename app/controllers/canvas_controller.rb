@@ -26,6 +26,10 @@ class CanvasController < ApplicationController
     end
   end
 
+  def update
+    
+  end
+
   private
 
   def canva_params

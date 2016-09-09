@@ -25,7 +25,7 @@ feature 'uploading' do
     # cdiv = page.find(:css, "#canvas_1")
     # whatever = execute_script("window.getComputedStyle(document.getElementById('canvas_2').style.backgroundColor")
     # expect(whatever).to eq("rgb(165, 99, 95)")
-    expect(page).to have_selector("div#first")
+    expect(page).to have_selector("div.palette")
   end
 
   scenario 'user uploads the picture with incorrect format' do
