@@ -1096,3 +1096,39 @@
          id="tspan7021" /></text>
   </g>
 </svg>
+
+<script>
+interact('#sofa, #room_wall, #room_floor, #carpet').dropzone({
+  accept: '#canvas_1, #canvas_2, #canvas_3',
+  overlap: 0.75,
+
+  // ondropactivate: function (event) {
+  //   // add active dropzone feedback
+  //   event.target.classList.add('drop-active');
+  // },
+  // ondragenter: function (event) {
+  //   var draggableElement = event.relatedTarget,
+  //       dropzoneElement = event.target;
+  //
+  //   // feedback the possibility of a drop
+  //   dropzoneElement.classList.add('drop-target');
+  //   draggableElement.classList.add('can-drop');
+  //   draggableElement.textContent = 'Dragged in';
+  // },
+  // ondragleave: function (event) {
+  //   // remove the drop feedback style
+  //   event.target.classList.remove('drop-target');
+  //   event.relatedTarget.classList.remove('can-drop');
+  //   event.relatedTarget.textContent = 'Dragged out';
+  // },
+  ondrop: function (event) {
+    console.log(this)
+    event.target.style.fill = event.relatedTarget.style.backgroundColor;
+  },
+  // ondropdeactivate: function (event) {
+  //   // remove active dropzone feedback
+  //   event.target.classList.remove('drop-active');
+  //   event.target.classList.remove('drop-target');
+  // }
+});
+</script>
