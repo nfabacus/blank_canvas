@@ -4,11 +4,11 @@
 
 
 <div id="first"><canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas><div>
-<canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
+<canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%; left: 0" ></canvas>
 <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;"></canvas>
 
 <script>
-var startX;
+// var startX = "test";
 interact('#canvas_1, #canvas_2, #canvas_3')
   .draggable({
     inertia: true,
@@ -17,18 +17,22 @@ interact('#canvas_1, #canvas_2, #canvas_3')
       elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
     },
     autoScroll: true,
-    onstart: function (event) {
-    var target = event.target,
-  //        startX = event.dx,
-  //        startY = event.dy;
-  //        console.log(startX);
-    startX = target.style.left;
-    console.log(startX);
-    },
+  //   onstart: function (event) {
+  //   var target = event.target;
+  // //        startX = event.dx,
+  // //        startY = event.dy;
+  // //        console.log(startX);
+  //   console.log('startX:', startX);
+  //
+  //
+  //   console.log('target after:', startX);
+  //   },
     onmove: dragMoveListener,
     onend: function (event) {
     var target = event.target;
-    target.style.left = startX;
+    // target.style.left = startX;
+    target.setAttribute('data-x', 0);
+    target.setAttribute('data-y', 0);
     }
   });
   function dragMoveListener (event) {
