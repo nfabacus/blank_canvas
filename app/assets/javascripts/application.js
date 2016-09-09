@@ -14,3 +14,47 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require interact.min.js
+
+interact('#sofa, #room_wall, #room_floor, #carpet').dropzone({
+  accept: '#canvas_1, #canvas_2, #canvas_3',
+  overlap: 0.75,
+
+  ondrop: function (event) {
+    event.target.style.fill = event.relatedTarget.style.backgroundColor;
+  },
+
+});
+
+interact('#canvas_1, #canvas_2, #canvas_3')
+  .draggable({
+    inertia: true,
+    restrict: {
+      endOnly: true,
+      elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+    },
+    autoScroll: true,
+
+
+    onmove: dragMoveListener,
+    onend: function (event) {
+      var target = event.target,
+          x = 0,
+          y = 0;
+      target.style.webkitTransform =
+      target.style.transform =
+        'translate(' + x + 'px, ' + y + 'px)';
+      target.setAttribute('data-x', x);
+      target.setAttribute('data-y', y);
+    }
+  });
+  function dragMoveListener (event) {
+    var target = event.target,
+        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+    target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)';
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+  }
