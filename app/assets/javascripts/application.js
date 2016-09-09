@@ -17,7 +17,7 @@
 //= require interact.min.js
 
 interact('#sofa, #room_wall, #room_floor, #carpet').dropzone({
-  accept: '#canvas_1, #canvas_2, #canvas_3',
+  accept: '#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6',
   overlap: 0.75,
 
   ondrop: function (event) {
@@ -26,7 +26,7 @@ interact('#sofa, #room_wall, #room_floor, #carpet').dropzone({
 
 });
 
-interact('#canvas_1, #canvas_2, #canvas_3')
+interact('#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6')
   .draggable({
     inertia: true,
     restrict: {
