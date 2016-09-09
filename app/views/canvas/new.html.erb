@@ -1,7 +1,2 @@
 <%= render 'switch_room' %>
-
-<%= form_for @canva, html: {multipart: true} do |f| %>
-  <input type="hidden" name="selection" value="<%= @choice %>">
-  <%= f.file_field :image %>
-  <%= f.submit "Upload picture" %>
-<% end %>
+<%= render 'upload_form' %>
