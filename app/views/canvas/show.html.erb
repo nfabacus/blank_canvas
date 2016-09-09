@@ -29,10 +29,14 @@ interact('#canvas_1, #canvas_2, #canvas_3')
   //   },
     onmove: dragMoveListener,
     onend: function (event) {
-    var target = event.target;
-    // target.style.left = startX;
-    target.setAttribute('data-x', 0);
-    target.setAttribute('data-y', 0);
+      var target = event.target,
+          x = 0,
+          y = 0;
+      target.style.webkitTransform =
+      target.style.transform =
+        'translate(' + x + 'px, ' + y + 'px)';
+      target.setAttribute('data-x', x);
+      target.setAttribute('data-y', y);
     }
   });
   function dragMoveListener (event) {
