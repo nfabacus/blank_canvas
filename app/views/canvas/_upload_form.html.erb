@@ -1,5 +1,5 @@
 <%= form_for @canva, html: {multipart: true} do |f| %>
-  <input type="hidden" name="selection" value="<%= @choice %>">
+  <input type="hidden" name="room_choice" value="<%= @svg %>">
   <%= f.file_field :image %>
   <%= f.submit "Upload picture" %>
 <% end %>

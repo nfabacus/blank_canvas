@@ -4,28 +4,28 @@ class CanvasController < ApplicationController
   include CreateColourPalette
   include ValidPhoto
 
-  def index
-
-  end
-
   def new
     @canva = Canva.new
-    @choice = params[:selection]
+    @svg = params[:room_choice]
   end
 
   def create
+    svg = params[:room_choice]
     @canva = Canva.create(canva_params)
-
-
     if @canva.save && valid_photo?
+      redirect_to canva_path(@canva, room_choice: svg)
 
-      redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
-      else
+    else
       flash[:notice] = "Please select a valid picture"
-      redirect_to "/canvas/new?selection=#{params[:selection]}"
+      redirect_to new_canva_path(room_choice: svg)
     end
-      # flash[:notice] = "Please select a valid picture"
-      # redirect_to "/canvas/new?selection=#{params[:selection]}"
+
+  end
+
+  def show
+    @svg = params[:room_choice]
+    @canva = Canva.find(params[:id])
+    @color = create_palette
   end
 
 
@@ -33,7 +33,7 @@ class CanvasController < ApplicationController
 
   def canva_params
     if params[:canva].present?
-      params.require(:canva).permit(:image, :selection)
+      params.require(:canva).permit(:image, :room_choice)
     end
   end
 
