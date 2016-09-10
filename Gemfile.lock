@@ -143,6 +143,7 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    rmagick (2.15.4)
     rspec-core (3.5.3)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -214,6 +215,7 @@ DEPENDENCIES
   pg (~> 0.15)
   poltergeist
   rails (= 4.2.7.1)
+  rmagick
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -1,5 +1,8 @@
+require 'RMagick'
+
 class CanvasController < ApplicationController
   include CreateColourPalette
+  include UploadPath
 
   def index
 
@@ -18,16 +21,19 @@ class CanvasController < ApplicationController
 
   def create
     @canva = Canva.create(canva_params)
-    if @canva.save
+
+    if @canva.save && !upload_path
       redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
     else
       flash[:notice] = "Please select a valid picture"
       redirect_to "/canvas/new?selection=#{params[:selection]}"
     end
+      # flash[:notice] = "Please select a valid picture"
+      # redirect_to "/canvas/new?selection=#{params[:selection]}"
   end
 
   def update
-    
+
   end
 
   private
