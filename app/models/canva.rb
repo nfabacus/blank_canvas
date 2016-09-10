@@ -8,12 +8,5 @@ class Canva < ActiveRecord::Base
   validates_attachment_presence :image
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
 
-  before_post_process :contains_alpha?
-
-  def contains_alpha?
-    path = "#{Rails.root}" + '/public' + @canva.image.url(:original, timestamp: false)
-    image = Magick::Image.read(path).first
-    image.alpha?
-  end
 
 end
