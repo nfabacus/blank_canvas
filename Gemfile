@@ -18,6 +18,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec-collection_matchers'
 end
 
 group :development, :test do
