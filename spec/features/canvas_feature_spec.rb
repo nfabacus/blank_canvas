@@ -19,7 +19,7 @@ end
 
 feature 'uploading' do
   scenario 'user uploads the picture' do
-    visit "/canvas/new"
+    visit "/BlankCanvas/new"
     page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
     click_button "Upload picture"
     # cdiv = page.find(:css, "#canvas_1")
@@ -29,7 +29,7 @@ feature 'uploading' do
   end
 
   scenario 'user uploads the picture with incorrect format' do
-    visit "/canvas/new"
+    visit "/BlankCanvas/new"
     page.attach_file "canva[image]", Rails.root + "spec/assets/ask.rb"
     click_button "Upload picture"
     expect(current_path).to eq new_canva_path
@@ -37,9 +37,11 @@ feature 'uploading' do
   end
 
   scenario 'user does not choose any picture' do
-    visit "/canvas/new"
+    visit "/BlankCanvas/new"
     click_button "Upload picture"
     expect(page).to have_content("Please select a valid picture")
   end
+
+  
 
 end
