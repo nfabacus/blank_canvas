@@ -19,3 +19,14 @@
  {
    background:url(images/test.svg);
  }
+
+ .error {
+      color: #9F6000;
+      background-color: #FEEFB3;
+      background-image: url('http://i.imgur.com/Z8q7ww7.png');
+      border: 1px solid;
+			margin: 10px 0px;
+			padding: 15px 10px 15px 50px;
+			background-repeat: no-repeat;
+			background-position: 10px center;
+ 		}

@@ -10,25 +10,17 @@ class CanvasController < ApplicationController
     @choice = params[:selection]
   end
 
-  def show
-    @choice = params[:selection]
-    @canva = Canva.find(params[:id])
-    @color = create_palette
-  end
-
   def create
-    @canva = Canva.create(canva_params)
-    if @canva.save
+    @canva = Canva.new(canva_params)
+      if @canva.save
       redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
-    else
+      else
       flash[:notice] = "Please select a valid picture"
       redirect_to "/canvas/new?selection=#{params[:selection]}"
     end
   end
 
-  def update
-    
-  end
+
 
   private
 
