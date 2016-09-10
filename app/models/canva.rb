@@ -1,5 +1,3 @@
-require 'RMagick'
-include CreateColourPalette
 
 class Canva < ActiveRecord::Base
 
