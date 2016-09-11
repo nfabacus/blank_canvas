@@ -3,6 +3,8 @@ require 'mini_magick'
 class CanvasController < ApplicationController
   include CreateColourPalette
   include ValidPhoto
+  include DirectMeWisely
+  include CheckForParamPresence
 
   def new
     @canva = Canva.new
@@ -10,14 +12,9 @@ class CanvasController < ApplicationController
   end
 
   def create
-    svg = params[:room_choice]
+    @svg = params[:room_choice]
     @canva = Canva.create(canva_params)
-    if @canva.save && valid_photo?
-      redirect_to canva_path(@canva, room_choice: svg)
-    else
-      flash[:notice] = "Please select a valid picture"
-      redirect_to new_canva_path(room_choice: svg)
-    end
+    direct_me_wisely
   end
 
   def show
@@ -27,17 +24,11 @@ class CanvasController < ApplicationController
   end
 
   def update
-    svg = params[:room_choice]
+    @svg = params[:room_choice]
     @canva = Canva.find(params[:id])
-    @canva.update(canva_params)
-    if @canva.save && valid_photo?
-      redirect_to canva_path(@canva, room_choice: svg)
-    else
-      flash[:notice] = "Please select a valid picture"
-      redirect_to new_canva_path(room_choice: svg)
-    end
+    check_for_param_presence
+    direct_me_wisely
   end
-
 
   private
 

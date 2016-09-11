@@ -69,4 +69,12 @@ feature 'uploading' do
     expect(page).to have_xpath("//img[contains(@src,'pic_2.jpg')]")
   end
 
+  scenario 'user gets the error message when uploads whilst not selecting a picture' do
+    visit "/BlankCanvas/new"
+    page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
+    click_button "Upload picture"
+    click_button "Upload picture"
+    expect(page).to have_content("Please select a valid picture")
+  end
+
 end
