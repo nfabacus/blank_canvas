@@ -29,7 +29,7 @@ feature 'uploading' do
 
     scenario 'colour palette is displayed' do
       visit "/BlankCanvas/new"
-      page.attach_file "canva_image", Rails.root + "spec/assets/black.jpg"
+      page.attach_file "canva_image", Rails.root + "spec/assets/black2.jpg"
       click_button "Upload picture"
       expect(page).to have_selector("div.palette")
       expect(page).to have_xpath("//canvas[contains(@style, 'background-color: #000000')]")

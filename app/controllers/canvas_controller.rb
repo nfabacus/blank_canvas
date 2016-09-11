@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'mini_magick'
 
 class CanvasController < ApplicationController
   include CreateColourPalette
