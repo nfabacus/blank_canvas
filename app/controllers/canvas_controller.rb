@@ -4,6 +4,10 @@ class CanvasController < ApplicationController
   include CreateColourPalette
   include ValidPhoto
 
+  def index
+
+  end
+
   def new
     @canva = Canva.new
     @svg = params[:room_choice]
@@ -13,6 +17,9 @@ class CanvasController < ApplicationController
     svg = params[:room_choice]
     @canva = Canva.create(canva_params)
     if @canva.save && valid_photo?
+      if user_signed_in?
+        current_user.canva << @canva
+      end
       redirect_to canva_path(@canva, room_choice: svg)
     else
       flash[:notice] = "Please select a valid picture"
@@ -37,7 +44,6 @@ class CanvasController < ApplicationController
       redirect_to new_canva_path(room_choice: svg)
     end
   end
-
 
   private
 

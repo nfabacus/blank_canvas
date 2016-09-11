@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'miro'
 gem 'paperclip'
 gem 'mini_magick'
+gem 'devise'
 
 group :test do
   gem 'poltergeist'
