@@ -11,13 +11,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'miro'
 gem 'paperclip'
-gem 'rmagick'
+gem 'mini_magick'
 
 group :test do
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec-collection_matchers'
 end
 
 group :development, :test do

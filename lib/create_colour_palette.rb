@@ -7,4 +7,5 @@ module CreateColourPalette
     color = Miro::DominantColors.new("#{Rails.root}" + '/public' + @path).to_hex
   end
 
+
 end

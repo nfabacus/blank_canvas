@@ -1,46 +1,40 @@
-require 'RMagick'
+require 'mini_magick'
 
 class CanvasController < ApplicationController
   include CreateColourPalette
   include ValidPhoto
-
-  def index
-
-  end
+  include DirectMeWisely
+  include CheckForParamPresence
 
   def new
     @canva = Canva.new
-    @choice = params[:selection]
+    @svg = params[:room_choice]
+  end
+
+  def create
+    @svg = params[:room_choice]
+    @canva = Canva.create(canva_params)
+    direct_me_wisely
   end
 
   def show
-    @choice = params[:selection]
+    @svg = params[:room_choice]
     @canva = Canva.find(params[:id])
     @color = create_palette
   end
 
-  def create
-    @canva = Canva.create(canva_params)
-
-    if @canva.save && valid_photo?
-      redirect_to "/canvas/#{@canva.id}?selection=#{params[:selection]}"
-    else
-      flash[:notice] = "Please select a valid picture"
-      redirect_to "/canvas/new?selection=#{params[:selection]}"
-    end
-      # flash[:notice] = "Please select a valid picture"
-      # redirect_to "/canvas/new?selection=#{params[:selection]}"
-  end
-
   def update
-
+    @svg = params[:room_choice]
+    @canva = Canva.find(params[:id])
+    check_for_param_presence
+    direct_me_wisely
   end
 
   private
 
   def canva_params
     if params[:canva].present?
-      params.require(:canva).permit(:image, :selection)
+      params.require(:canva).permit(:image, :room_choice)
     end
   end
 
