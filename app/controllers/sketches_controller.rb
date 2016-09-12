@@ -8,7 +8,7 @@ class SketchesController < ApplicationController
 
     @svg_path = "#{Rails.root}" + "/public/images/room_#{params[:room_choice]}.svg"
 
-    @svg_file = File.open(@svg_path) { |f| Nokogiri::HTML(f) }
+    @svg_file = File.open(@svg_path) { |f| Nokogiri::XML(f) }
 
     @sofa = params[:sofa]
     @cushion_one = params[:cushion_one]
@@ -19,23 +19,15 @@ class SketchesController < ApplicationController
     @carpet= params[:carpet]
     @coffee_table = params[:coffee_table]
 
+    target = @svg_file.at_css("#sofa")
 
-    nodes = @svg_file.at_css("#sofa")
-    nodes['class'] = '####'
-    style = nodes.styles
+    puts target
+    puts '-' * 40
 
-      style['fill'] = '#000000'
-      nodes.styles = style
-      puts nodes
-      puts '-'*40
+    target['style'] = "color:#000000;fill:#{@sofa};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
 
-    # style = @svg_file.styles
-    # style['sofa.color'] = @sofa
-    #
-    # @svg_file.css("#sofa")['fill'] = @sofa
-
-
-
+    puts target
+    puts '-' * 40
 
     @canva = Canva.find(params[:canva_id])
     @sketch = Sketch.new(sketch_params)
