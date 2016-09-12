@@ -13,6 +13,7 @@ gem 'miro'
 gem 'paperclip'
 gem 'mini_magick'
 gem 'devise'
+gem 'nokogiri-styles'
 
 group :test do
   gem 'poltergeist'

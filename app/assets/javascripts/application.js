@@ -22,6 +22,8 @@ interact('#sofa, #room_wall, #room_floor, #carpet, #cushion_one, #cushion_two, #
 
   ondrop: function (event) {
     event.target.style.fill = event.relatedTarget.style.backgroundColor;
+    var field = document.getElementById(String(event.target.id) + '_key');
+    field.value = event.target.style.fill;
   },
 
 });
