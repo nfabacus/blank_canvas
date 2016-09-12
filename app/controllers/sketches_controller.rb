@@ -5,7 +5,6 @@ class SketchesController < ApplicationController
 
   def create
 
-
     @svg_path = "#{Rails.root}" + "/public/images/room_#{params[:room_choice]}.svg"
 
     @svg_file = File.open(@svg_path) { |f| Nokogiri::XML(f) }
@@ -22,21 +21,16 @@ class SketchesController < ApplicationController
     @colors.each do |key, value|
       target = @svg_file.at_css("#" + key.to_s)
       target['style'] = "color:#000000;fill:#{value};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-      puts target
-      puts '-' * 40
+
     end
-
-    
-
-    # target = @svg_file.at_css("#sofa")
-    #
-    # target['style'] = "color:#000000;fill:#{@sofa};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
 
 
     ##################################################################
 
     @canva = Canva.find(params[:canva_id])
-    @sketch = Sketch.new(sketch_params)
+    @sketch = Sketch.new
+    @sketch.save
+    @canva.sketch = @sketch
     @user = @canva.user_id
     redirect_to "/users/#{@user}"
   end

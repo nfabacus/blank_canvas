@@ -14,6 +14,7 @@ gem 'paperclip'
 gem 'mini_magick'
 gem 'devise'
 gem 'nokogiri-styles'
+gem 'sprockets-svg'
 
 group :test do
   gem 'poltergeist'

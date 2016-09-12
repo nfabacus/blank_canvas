@@ -2,4 +2,5 @@ My stuff
 
 <%@canva.each do |canva|%>
   <%= image_tag canva.image.url(:medium) %>
+  <%= Sketch.find(canva_id=canva.id)%>
   <%end%>
