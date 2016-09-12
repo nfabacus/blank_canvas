@@ -10,24 +10,30 @@ class SketchesController < ApplicationController
 
     @svg_file = File.open(@svg_path) { |f| Nokogiri::XML(f) }
 
-    @sofa = params[:sofa]
-    @cushion_one = params[:cushion_one]
-    @cushion_two = params[:cushion_two]
-    @room_wall = params[:room_wall]
-    @room_floor = params[:room_floor]
-    @lamp = params[:lamp]
-    @carpet= params[:carpet]
-    @coffee_table = params[:coffee_table]
+    @colors = {sofa: params[:sofa],
+               cushion_one: params[:cushion_one],
+               cushion_two: params[:cushion_two],
+               room_wall: params[:room_wall],
+               room_floor: params[:room_floor],
+               lamp: params[:lamp],
+               carpet: params[:carpet],
+               coffee_table: params[:coffee_table]}
 
-    target = @svg_file.at_css("#sofa")
+    @colors.each do |key, value|
+      target = @svg_file.at_css("#" + key.to_s)
+      target['style'] = "color:#000000;fill:#{value};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+      puts target
+      puts '-' * 40
+    end
 
-    puts target
-    puts '-' * 40
+    
 
-    target['style'] = "color:#000000;fill:#{@sofa};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+    # target = @svg_file.at_css("#sofa")
+    #
+    # target['style'] = "color:#000000;fill:#{@sofa};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
 
-    puts target
-    puts '-' * 40
+
+    ##################################################################
 
     @canva = Canva.find(params[:canva_id])
     @sketch = Sketch.new(sketch_params)
