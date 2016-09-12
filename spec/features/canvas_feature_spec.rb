@@ -70,7 +70,7 @@ feature 'uploading' do
   end
 
   scenario 'user gets the error message when uploads whilst not selecting a picture' do
-    visit "/BlankCanvas/new"
+    visit "/canvas/new"
     page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
     click_button "Upload picture"
     click_button "Upload picture"

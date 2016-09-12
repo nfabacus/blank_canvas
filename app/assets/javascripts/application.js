@@ -16,7 +16,7 @@
 //= require_tree .
 //= require interact.min.js
 
-interact('#sofa, #room_wall, #room_floor, #carpet, #cushion_one, #cushion_two').dropzone({
+interact('#sofa, #room_wall, #room_floor, #carpet, #cushion_one, #cushion_two, #lamp, #coffee_table').dropzone({
   accept: '#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6',
   overlap: 0.75,
 

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :canvas
+  resources :canvas do
+    resources :sketches 
+  end
   resources :users
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
