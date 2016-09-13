@@ -19,8 +19,7 @@ module UpdateSVGWithColours
       target['style'] = "color:#000000;fill:#{value};fill-opacity:1;stroke:none;stroke-width:0.5;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
     end
     FileUtils::mkdir_p "#{Rails.root}/public/coloured_svgs/user_#{@user}/canva_#{@canva.id}"
-
-    File.write("#{Rails.root}"+"/public/coloured_svgs/user_#{@user}/canva_#{@canva.id}/sketch_#{@sketch.id}.svg", @svg_file.to_xml)
+    File.write("#{Rails.root}/public/coloured_svgs/user_#{@user}/canva_#{@canva.id}/sketch_#{@sketch.id}.svg", @svg_file.to_xml)
 
   end
 end

@@ -15,3 +15,4 @@
 public/images/test_old.svg
 
 /public/system/canvas/**/*
+/public/coloured_svgs/**/*
