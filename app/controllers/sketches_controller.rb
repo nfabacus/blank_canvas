@@ -10,12 +10,12 @@ class SketchesController < ApplicationController
 
   def create
     @canva = Canva.find(params[:canva_id])
-    @sketch = Sketch.new
+    @sketch = Sketch.create
     @user = @canva.user_id
 
     update_svg_with_colours
 
-    @sketch.image_path="/coloured_svgs/user_#{@user}/canva_#{@canva.id}.svg"
+    @sketch.image_path="/coloured_svgs/user_#{@user}/canva_#{@canva.id}/sketch_#{@sketch.id}.svg"
 
     @sketch.save
     @canva.sketches << @sketch
