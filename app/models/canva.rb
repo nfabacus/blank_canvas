@@ -6,5 +6,7 @@ class Canva < ActiveRecord::Base
   validates_attachment_presence :image
   validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
 
+  belongs_to :user
+  has_one :sketch
 
 end

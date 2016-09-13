@@ -4,12 +4,15 @@
 
 <%= render 'upload_form' %>
 
+<div class="palette">
+  <canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas>
+  <canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
+  <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;border-radius:50%;"></canvas>
+  <canvas id="canvas_4" width="50" height="50" style="background-color: <%= @color[3] %>;border-radius:50%;"></canvas>
+  <canvas id="canvas_5" width="50" height="50" style="background-color: <%= @color[4] %>;border-radius:50%;"></canvas>
+  <canvas id="canvas_6" width="50" height="50" style="background-color: <%= @color[5] %>;border-radius:50%;"></canvas>
+<div>
 
-  <div class="palette">
-    <canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas>
-    <canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
-    <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;border-radius:50%;"></canvas>
-    <canvas id="canvas_4" width="50" height="50" style="background-color: <%= @color[3] %>;border-radius:50%;"></canvas>
-    <canvas id="canvas_5" width="50" height="50" style="background-color: <%= @color[4] %>;border-radius:50%;"></canvas>
-    <canvas id="canvas_6" width="50" height="50" style="background-color: <%= @color[5] %>;border-radius:50%;"></canvas>
-  <div>
+<%if user_signed_in?%>
+  <%= render 'save_form' %>
+<%end%>

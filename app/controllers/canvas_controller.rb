@@ -6,6 +6,10 @@ class CanvasController < ApplicationController
   include DirectMeWisely
   include CheckForParamPresence
 
+  def index
+
+  end
+
   def new
     @canva = Canva.new
     @svg = params[:room_choice]
