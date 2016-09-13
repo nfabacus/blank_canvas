@@ -13,6 +13,8 @@ class SketchesController < ApplicationController
     File.open("#{Rails.root}"+"/public/coloured_svgs/#{@canva.id}.xml") do |f|
       @sketch.svg_file = f
       @sketch.save
+
+      
     end
 
     @user = @canva.user_id
