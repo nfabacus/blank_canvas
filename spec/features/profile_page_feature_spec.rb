@@ -24,7 +24,7 @@ feature 'Canva' do
     click_button "Upload picture"
     expect(page).to have_selector("div.palette")
     expect(page).to have_xpath("//canvas[contains(@style, 'background-color: #000000')]")
-    expect(page).to have_link 'Save my canvas'
+    expect(page).to have_button 'Save my canvas'
   end
 
   scenario 'A logged in user has a profile page' do

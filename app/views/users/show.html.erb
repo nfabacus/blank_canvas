@@ -1,6 +1,14 @@
-My stuff
+<h1>My collection</h1>
 
-<%@canva.each do |canva|%>
+<%@canvases.each do |canva|%>
+<div id = 'photo'>
+<%if canva.sketches.any?%>
   <%= image_tag canva.image.url(:medium) %>
-  <%= Sketch.find(canva_id=canva.id)%>
+  <% end %>
+  </div>
+  <div id = 'sketch'>
+    <% canva.sketches.each do |sketch| %>
+      <%= image_tag sketch.image_path %>
+    <%end%>
   <%end%>
+</div>
