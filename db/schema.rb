@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912192001) do
+ActiveRecord::Schema.define(version: 20160913093341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160912192001) do
     t.string   "svg_file_content_type"
     t.integer  "svg_file_file_size"
     t.datetime "svg_file_updated_at"
+    t.string   "image_path"
   end
 
   add_index "sketches", ["canva_id"], name: "index_sketches_on_canva_id", using: :btree

@@ -1,6 +1,8 @@
 My stuff
 
-<%@canva.each do |canva|%>
+<%@canvases.each do |canva|%>
   <%= image_tag canva.image.url(:medium) %>
-  <%= Sketch.find(canva_id=canva.id)%>
+    <% canva.sketches.each do |sketch| %>
+      <%= image_tag sketch.image_path %>
+    <%end%>
   <%end%>

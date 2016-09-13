@@ -1,5 +1,9 @@
 require 'nokogiri'
 require 'nokogiri-styles'
+require 'fileutils'
+
+
+
 
 class SketchesController < ApplicationController
   include UpdateSVGWithColours
@@ -7,15 +11,15 @@ class SketchesController < ApplicationController
   def create
     @canva = Canva.find(params[:canva_id])
     @sketch = Sketch.new
+    @user = @canva.user_id
 
     update_svg_with_colours
 
-    File.open("#{Rails.root}"+"/public/coloured_svgs/#{@canva.id}.xml") do |f|
-      @sketch.svg_file = f
-      @sketch.save
+    @sketch.image_path="/coloured_svgs/user_#{@user}/canva_#{@canva.id}.svg"
 
-      
-    end
+    @sketch.save
+    @canva.sketches << @sketch
+
 
     @user = @canva.user_id
     redirect_to "/users/#{@user}"
