@@ -66,9 +66,9 @@ class CanvasController < ApplicationController
       @canva = Canva.find(params[:canva_id])
       @svg = params[:room_choice]
       @color = create_palette
-      @user = User.find(@canva.user_id)
     render :paint
   end
+
 
   private
 
