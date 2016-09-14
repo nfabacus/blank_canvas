@@ -42,14 +42,27 @@ class CanvasController < ApplicationController
     end
   end
 
-    def paint
-        @canva = Canva.find(params[:canva_id])
-        @svg = params[:room_choice]
-        @color = create_palette
-        if user_signed_in?
-          @user = User.find(@canva.user_id)
-        end
+  def save
+      @canva = Canva.find(params[:canva_id])
+    if user_signed_in?
+      @user = User.find(@canva.user_id)
     end
+      @svg = params[:room_choice]
+      @color = create_palette
+      redirect_to canva_paint_path(@canva, room_choice: @svg)
+  end
+
+  def paint
+      @canva = Canva.find(params[:canva_id])
+    if user_signed_in?
+      @user = User.find(@canva.user_id)
+    end
+      @svg = params[:room_choice]
+      @color = create_palette
+      render :paint
+  end
+
+
 
 
   private

@@ -11,12 +11,12 @@ feature 'Canvas' do
     end
 
     scenario 'user selects their favourite wireframe' do
-      pick_svg
-      expect(page.current_path).to eq new_canva_path
+      visit '/'
+      click_button('first_svg')
       page.attach_file "canva_image", Rails.root + "spec/assets/pic_1.jpg"
       click_button "Show my colours"
       click_button "Continue"
-      expect(page).to have_xpath("//svg[contains(@id, 'svg2')]")
+      expect(page).to have_xpath('//svg[contains(@id, "svg2")]')
     end
 
     scenario 'user provides colour source' do

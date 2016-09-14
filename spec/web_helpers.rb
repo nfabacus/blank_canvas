@@ -5,8 +5,8 @@ end
 
 def create_a_coloured_canvas
   visit '/'
-  click_link 'sign up'
-  # fill_in 'Username', with: 'test'
+  click_link 'sign in'
+  fill_in 'Username', with: 'test_user'
   fill_in 'Email', with: 'test@test.co.uk'
   fill_in 'Password', with: '123456'
   fill_in 'Password confirmation', with: '123456'

@@ -1,6 +1,4 @@
-
 <h1><img src="/images/flourish_left.svg"> Paint your canvas <img src="/images/flourish_right.svg"></h1>
-
 <div>
   <div class="palette">
     <p class="paintInfo">
@@ -24,17 +22,11 @@
   </div>
 </div>
 
-<%=render 'save_form' %>
-
-<form method="get" action= "<%=canvas_path%>">
-  <input type = 'submit' value = 'New Room' />
-</form>
-
 <div class="paint_view">
   <%=render 'switch_room' %>
 </div>
-
-
+</div>
+<form method="post" action= "<%=canva_sketches_path @canva %>">
 
 <script>
 
