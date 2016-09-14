@@ -106,10 +106,13 @@
     			background-position: 10px center;
      		}
 
-     .palette {
-      margin: 10px;
+
+     .not_bens_palette {
       text-align: center;
+      font-size: 0px;
+      margin-bottom: 10px;
      }
+
 
      .paint {
       border: 2px solid;
@@ -251,8 +254,17 @@
     }
 
     .continue-try-div {
-      margin-left: 27px;
       text-align: center;
+      margin-top: 80px;
+    }
+
+    .style_image {
+      height: auto;
+      width: 300px;
+      display: block;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto }
     }
 
     h1 {
