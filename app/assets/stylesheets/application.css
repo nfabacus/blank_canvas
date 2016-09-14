@@ -33,6 +33,7 @@
 
     body{
       font-family: 'Playfair Display', serif;
+      color: #272626;
      }
 
      h1{
@@ -43,10 +44,11 @@
      }
 
      h2{
+       font-family: 'Playfair Display', serif;
        margin: 10px;
        font-weight: normal;
        text-align: center;
-       font-size: 25px;
+       font-size: 35px;
      }
 
      .logo{
@@ -58,7 +60,7 @@
        font-family: 'Playfair Display', serif;
        font-size: 40px;
        letter-spacing: 0.01em;
-       color: black;
+       color: #272626;
      }
 
      .italic{
@@ -73,12 +75,14 @@
      }
 
      .menu-list{
+       color: #272626;
        font-family: 'Playfair Display', serif;
        font-size: 24px;
      }
 
      li a{
        text-decoration: none;
+       color: #272626;
      }
 
      input[type="submit"]
@@ -130,34 +134,25 @@
      }
 
      .outside-box {
-       width: 55%;
+       width: 80%;
        margin: auto;
      }
 
      @media screen and (max-width: 1200px) {
-        .roomView {
-          width: 60%;
-        }
         .outside-box {
-          width: 60%;
+          width: 80%;
         }
      }
 
      @media screen and (max-width: 1000px) {
-        .roomView {
-          width: 70%;
-        }
         .outside-box {
-          width: 70%;
+          width: 80%;
         }
 
      }
 
      @media screen and (max-width: 800px) {
-        .roomView {
-          width: 90%;
-        }
         .outside-box {
-          width: 90%;
+          width: 80%;
         }
      }
