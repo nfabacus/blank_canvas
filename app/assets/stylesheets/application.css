@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require ben.css
  */
 
 
@@ -107,8 +108,22 @@
      		}
 
      .palette {
-      margin: 10px;
+      float: left;
+      width: 20%;
       text-align: center;
+     }
+    .palette canvas {
+      display: block;
+      margin: 20px 10px 10px 10px;
+    }
+
+     .paint_view {
+       float: right;
+       width: 80%;
+     }
+
+     .paint_view svg {
+        width: 100%;
      }
 
      .paint {
@@ -117,8 +132,26 @@
      }
 
     input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-      font-family: 'Cormorant Garamond', serif;
-      background-color: white;
+      background-color: #464242;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+      border-style: none;
+    }
+
+    .side_nav_button:hover {
+      background-color: #2a2929;
+    }
+
+    input[type="submit" i].side_nav_button {
+      width: 85%;
+      font-size: 20px;
+      font-weight: bold;
+      height: 60px;
     }
 
      .roomView {
@@ -174,4 +207,18 @@
       -ms-transform: rotate(90deg); /* IE 9 */
       -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
       transform: rotate(90deg);
+    }
+    h1 img {
+      width: 8%;
+      height: 8%;
+    }
+    .helper_colours {
+      float: right;
+    }
+    .user_colours {
+      float: right;
+    }
+    .paintInfo {
+      margin: 8px;
+      font-family: 'Fauna One', serif;
     }
