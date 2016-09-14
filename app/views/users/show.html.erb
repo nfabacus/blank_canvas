@@ -9,7 +9,8 @@
   <div id = 'sketch'>
     <% canva.sketches.each do |sketch| %>
       <%= image_tag sketch.image_path %>
-  
+      <%= button_to 'delete', canva_sketch_path(id: sketch.id, canva_id: sketch.canva.id), method: :delete %>
+
     <%end%>
   <%end%>
 </div>

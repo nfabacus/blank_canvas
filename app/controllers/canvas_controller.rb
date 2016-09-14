@@ -70,6 +70,7 @@ class CanvasController < ApplicationController
     render :paint
   end
 
+
   private
 
   def canva_params
