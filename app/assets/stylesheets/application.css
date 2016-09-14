@@ -33,7 +33,7 @@
 
     body{
       font-family: 'Playfair Display', serif;
-      color: #272626;
+      color: #464242;
      }
 
      h1{
@@ -55,34 +55,35 @@
        text-transform: initial;
        display: inline;
        float: left;
-       margin: 15px;
+       margin: 0px 30px 0px 30px;
        text-decoration: none;
        font-family: 'Playfair Display', serif;
        font-size: 40px;
        letter-spacing: 0.01em;
-       color: #272626;
+       color: #464242;
      }
 
      .italic{
        font-weight: bold;
        font-style: italic;
+       color: #3a3737;
      }
 
      .right{
        display: inline;
        float: right;
-       margin: 15px;
+       margin: 0px 30px 0px 30px;
      }
 
      .menu-list{
-       color: #272626;
+       color: #8a8181;
        font-family: 'Playfair Display', serif;
        font-size: 24px;
      }
 
      li a{
        text-decoration: none;
-       color: #272626;
+       color: #8a8181;
      }
 
      input[type="submit"]
@@ -156,3 +157,21 @@
           width: 80%;
         }
      }
+
+     .pure-u-sm-1-2 {
+       vertical-align: baseline;
+     }
+     .pure-menu-horizontal {
+       padding-top: 30px;
+     }
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+      margin-bottom: 18px;
+    }
+    .rotate {
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+      transform: rotate(90deg);
+    }
