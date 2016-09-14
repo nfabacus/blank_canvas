@@ -21,7 +21,7 @@
       <div class="pure-u-sm-1-2">
         <ul class="menu-list right">
           <%if user_signed_in?%>
-            <li class="pure-menu-item">welcome <%=current_user.email%> | </li>
+            <li class="pure-menu-item">welcome <%=current_user.user_name%> | </li>
             <li class="pure-menu-item"><%= link_to "my collection", current_user %> | </li>
             <li class="pure-menu-item"><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <%else%>
