@@ -4,7 +4,7 @@
   <title>BlankCanvas</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,18 +13,25 @@
 </head>
 <body>
 <center>
-  <div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading pure-menu-link">Blank Canvas</a>
-    <ul class="pure-menu-list">
-      <%if user_signed_in?%>
-        Welcome <%=current_user.email%>
-        <li class="pure-menu-item"> <%= link_to "My collection", current_user %></li>
-        <li class="pure-menu-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      <%else%>
-        <li class="pure-menu-item"><%= link_to "Sign in", new_user_session_path %></li>
-        <li class="pure-menu-item"><%= link_to "Sign up", new_user_registration_path %></li>
-      <%end%>
-    </ul>
+
+  <div class="pure-g">
+    <div class="pure-menu pure-menu-horizontal">
+      <div class="pure-u-sm-1-2">
+        <a href="/" class="logo">Blank <span class="italic">Canvas<span></a>
+      </div>
+      <div class="pure-u-sm-1-2">
+        <ul class="menu-list right">
+          <%if user_signed_in?%>
+            <li class="pure-menu-item">welcome <%=current_user.email%> | </li>
+            <li class="pure-menu-item"><%= link_to "my collection", current_user %> | </li>
+            <li class="pure-menu-item"><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+          <%else%>
+            <li class="pure-menu-item"><%= link_to "sign in", new_user_session_path %> | </li>
+            <li class="pure-menu-item"><%= link_to "sign up", new_user_registration_path %></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <p class="alert"><%= alert %></p>
