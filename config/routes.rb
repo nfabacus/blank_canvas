@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :canvas do
-    post "paint"
     get "paint"
+    post "paint"
     resources :sketches
   end
   resources :users
