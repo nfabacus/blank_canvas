@@ -18,7 +18,13 @@
   <input id ='picture_frames_key'type="hidden" name="picture_frames" value= '#ffffff' >
   <input id ='sofa_stand_key'type="hidden" name="sofa_stand" value= '#ffffff' >
   <input id ='skirting_key'type="hidden" name="skirting" value= '#ffffff'>
-  <%if user_signed_in?%>
-    <button id="generate_svg" type="submit" class="link-button">Save</button>
-  <%end%>
+
+  <% if user_signed_in? %>
+    <input id="generate_svg" type="submit" class="side_nav_button" value="Save"></input>
+  <% end %>
+</form>
+
+<form method="get" action= "<%=canvas_path%>">
+  <input type='submit' value='New Room' class="side_nav_button"/>
+
 </form>

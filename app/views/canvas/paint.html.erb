@@ -1,19 +1,56 @@
-<h1>Paint your canvas</h1>
 
-<div class="palette">
-  <canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_4" width="50" height="50" style="background-color: <%= @color[3] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_5" width="50" height="50" style="background-color: <%= @color[4] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_6" width="50" height="50" style="background-color: <%= @color[5] %>;border-radius:50%;"></canvas>
+<h1><img src="/images/flourish_left.svg"> Paint your canvas <img src="/images/flourish_right.svg"></h1>
+
 <div>
-
-<%=render 'switch_room' %>
+  <div class="palette">
+    <p class="paintInfo">
+      Use your colour selection and our helpers to style your room.
+    </p>
+    <%=render 'save_form' %>
+    <div class="helper_colours">
+      <canvas id="canvas_7" width="40" height="40" style="background-color:#cdcdcd;border-radius:50%;"></canvas>
+      <canvas id="canvas_8" width="40" height="40" style="background-color:#d9caa1;border-radius:50%;"></canvas>
+      <canvas id="canvas_9" width="40" height="40" style="background-color:#c4c19c;border-radius:50%;"></canvas>
+      <canvas id="canvas_10" width="40" height="40" style="background-color:#ffffff;border-radius:50%;"></canvas>
+    </div>
+    <div class="user_colours">
+      <canvas id="canvas_1" width="40" height="40" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas>
+      <canvas id="canvas_2" width="40" height="40" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
+      <canvas id="canvas_3" width="40" height="40" style="background-color: <%= @color[2] %>;border-radius:50%;"></canvas>
+      <canvas id="canvas_4" width="40" height="40" style="background-color: <%= @color[3] %>;border-radius:50%;"></canvas>
+      <canvas id="canvas_5" width="40" height="40" style="background-color: <%= @color[4] %>;border-radius:50%;"></canvas>
+      <canvas id="canvas_6" width="40" height="40" style="background-color: <%= @color[5] %>;border-radius:50%;"></canvas>
+    </div>
+  </div>
+</div>
 
 <%=render 'save_form' %>
-
 
 <form method="get" action= "<%=canvas_path%>">
   <input type = 'submit' value = 'New Room' />
 </form>
+
+<div class="paint_view">
+  <%=render 'switch_room' %>
+</div>
+
+
+
+<script>
+
+var c = document.getElementById("canvas_10");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(0, 0);
+ctx.lineTo(40, 40);
+ctx.lineWidth=4;
+ctx.strokeStyle="red";
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(0, 40);
+ctx.lineTo(40, 0);
+ctx.lineWidth=4;
+ctx.strokeStyle="red";
+ctx.stroke();
+
+</script>

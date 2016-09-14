@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fauna+One" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -21,7 +22,7 @@
       <div class="pure-u-sm-1-2">
         <ul class="menu-list right">
           <%if user_signed_in?%>
-            <li class="pure-menu-item">welcome <%=current_user.email%> | </li>
+            <li class="pure-menu-item">welcome <%=current_user.user_name%> | </li>
             <li class="pure-menu-item"><%= link_to "my collection", current_user %> | </li>
             <li class="pure-menu-item"><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
           <%else%>
