@@ -9,6 +9,7 @@
 </head>
 <body>
   <h1>Blank Canvas</h1>
+
   <%if user_signed_in?%>
     <nav>
       <h4>Welcome <%=current_user.email%></h4>
@@ -17,6 +18,8 @@
     <%= link_to "Sign in", new_user_session_path %>
     <%= link_to "Sign up", new_user_registration_path %>
   <%end%>
+  <%= link_to "Home", canvas_path %>
+  <%= link_to "Help", pages_path%>
   </nav>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

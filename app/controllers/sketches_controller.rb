@@ -25,6 +25,17 @@ class SketchesController < ApplicationController
     redirect_to "/users/#{@user}"
   end
 
+  def show
+
+  end
+
+  def destroy
+    @sketch = Sketch.find(params[:id])
+    @sketch.destroy
+    flash[:notice] = 'deleted'
+    redirect_to user_path
+  end
+
   private
 
   def sketch_params

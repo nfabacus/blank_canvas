@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :sketches
   end
   resources :users
+  resources :pages, only: :index do
+  end
+
 
 
 
