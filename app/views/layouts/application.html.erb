@@ -2,28 +2,36 @@
 <html>
 <head>
   <title>BlankCanvas</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
-  <h1>Blank Canvas</h1>
-  <%if user_signed_in?%>
-    <nav>
-      <h4>Welcome <%=current_user.email%></h4>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %> <%= link_to "My collection", current_user %>
-  <%else%>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
-  <%end%>
-  </nav>
-  <p class="notice"><%= notice %></p>
+<center>
+  <div class="pure-menu pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading pure-menu-link">Blank Canvas</a>
+    <ul class="pure-menu-list">
+      <%if user_signed_in?%>
+        Welcome <%=current_user.email%>
+        <li class="pure-menu-item"> <%= link_to "My collection", current_user %></li>
+        <li class="pure-menu-item"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <%else%>
+        <li class="pure-menu-item"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="pure-menu-item"><%= link_to "Sign up", new_user_registration_path %></li>
+      <%end%>
+    </ul>
+  </div>
+
   <p class="alert"><%= alert %></p>
   <% flash.each do |name, msg| -%>
         <div class = 'error'><%= content_tag :div, msg, class: name %></div>
       <% end -%>
-
+</center>
 <%= yield %>
 
 </body>

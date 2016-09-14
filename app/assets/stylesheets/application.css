@@ -30,10 +30,117 @@
 			background-repeat: no-repeat;
 			background-position: 10px center;
  		}
-  nav{
-    text-align: right;
-  }
 
-  h1 {
-    text-align:left;
-  }
+    body{
+      font-family: 'Cormorant Garamond', serif;
+     }
+
+     h1{
+       margin: 10px;
+       font-weight: normal;
+       text-align: center;
+       font-size: 50px;
+     }
+
+     h2{
+       margin: 10px;
+       font-weight: normal;
+       text-align: center;
+       font-size: 25px;
+     }
+
+
+     input[type="submit"]
+     {
+       background:url(images/test.svg);
+     }
+
+     .upload-field {
+      font-size: 25px;
+     }
+
+     .error {
+          color: #9F6000;
+          background-color: #FEEFB3;
+          background-image: url('http://i.imgur.com/Z8q7ww7.png');
+          border: 1px solid;
+    			margin: 10px 0px;
+    			padding: 15px 10px 15px 50px;
+    			background-repeat: no-repeat;
+    			background-position: 10px center;
+     		}
+
+     .palette {
+      margin: 10px;
+      text-align: center;
+     }
+
+     .paint {
+      border: 2px solid;
+      border-radius:50%;
+     }
+
+    input[type="submit"] {
+       border: 2px solid;
+     }
+
+    input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+      border: 2px solid;
+      font-family: 'Cormorant Garamond', serif;
+      background-color: white;
+    }
+
+     .roomView {
+       width: 45%;
+       margin:auto;
+
+     }
+
+     .upload {
+       margin: 10px;
+
+     }
+
+     .inside-box {
+       margin: 10px;
+     }
+
+     .outside-box {
+       width: 55%;
+       margin: auto;
+     }
+
+     .img-circle {
+       width: 100px;
+       height: 100px;
+       border-radius: 50%;
+       border:2px black solid;
+     }
+
+     @media screen and (max-width: 1200px) {
+        .roomView {
+          width: 60%;
+        }
+        .outside-box {
+          width: 60%;
+        }
+     }
+
+     @media screen and (max-width: 1000px) {
+        .roomView {
+          width: 70%;
+        }
+        .outside-box {
+          width: 70%;
+        }
+
+     }
+
+     @media screen and (max-width: 800px) {
+        .roomView {
+          width: 90%;
+        }
+        .outside-box {
+          width: 90%;
+        }
+     }
