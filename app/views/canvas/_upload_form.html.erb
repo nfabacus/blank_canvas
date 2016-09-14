@@ -2,26 +2,36 @@
 
 <%= form_for @canva, html: {multipart: true} do |f| %>
   <input type="hidden" name="room_choice" value="<%= @svg %>">
-  <%= f.file_field :image %>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
 
-  <!-- image tag in here -->
+  <div style="height:0px;overflow:hidden">
+    <%= f.file_field :image, :id => 'fileInput', :onchange => "readURL()" %>
+  </div>
 
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
+  <div class="imageUploadDiv">
 
-  <%= f.submit "Show my my colours" %>
+    <span class="actionNumber">1.</span> <button type="button" class="bigBtnDefault" onclick="chooseFile();">Choose an Image</button>
+
+    <div id="fileURL"></div>
+
+    <span class="actionNumber">2.</span><%= f.submit "Upload my Image", :class => 'bigBtnLighter' %>
+  </div>
+
+  <div class="continue-try-div">
+    <button class="mediumBtnDefault">Continue</button> <button class="mediumBtnLighter">Try again</button>
+  </div>
 <% end %>
+
+
+<script>
+  function chooseFile() {
+    document.getElementById("fileInput").click();
+    var message = $("input#fileInput").val();
+    console.log(message);
+  }
+
+  function readURL() {
+    var message = $("input#fileInput").val();
+    $("#fileURL").html(message);
+  }
+
+</script>
