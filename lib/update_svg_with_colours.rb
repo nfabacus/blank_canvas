@@ -12,7 +12,17 @@ module UpdateSVGWithColours
                room_floor: params[:room_floor],
                lamp: params[:lamp],
                carpet: params[:carpet],
-               coffee_table: params[:coffee_table]}
+               coffee_table: params[:coffee_table],
+               lamp_secondary: params[:lamp_secondary],
+               lamp_body: params[:lamp_body],
+               sofa_secondary: params[:sofa_secondary],
+               coffee_table_legs: params[:coffee_table_legs],
+               coffee_table_drawer: params[:coffee_table_drawer],
+               flower_pot: params[:flower_pot],
+               picture_frames: params[:picture_frames],
+               sofa_stand: params[:sofa_stand],
+               skirting: params[:skirting]
+              }
 
     @colors.each do |key, value|
       target = @svg_file.at_css("#" + key.to_s)
