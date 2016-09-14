@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= captions
  */
 
 
@@ -127,10 +128,6 @@
      }
 
      .upload {
-       margin: 10px;
-     }
-
-     .inside-box {
        margin: 10px;
      }
 
