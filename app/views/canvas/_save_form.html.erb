@@ -1,6 +1,3 @@
-
-
-
 <form method="post" action= "<%=canva_sketches_path @canva %>">
   <input type="hidden" name="room_choice" value="<%= @svg %>">
   <input id ='sofa_key' type="hidden" name="sofa" value= '#ffffff' >
@@ -20,7 +17,5 @@
   <input id ='picture_frames_key'type="hidden" name="picture_frames" value= '#ffffff' >
   <input id ='sofa_stand_key'type="hidden" name="sofa_stand" value= '#ffffff' >
   <input id ='skirting_key'type="hidden" name="skirting" value= '#ffffff'>
-  <button id="generate_svg" type="submit" class="link-button">Save my canvas</button>
+  <button id="generate_svg" type="submit" class="link-button">Continue</button>
 </form>
-
-<%= link_to "My profile", current_user %>

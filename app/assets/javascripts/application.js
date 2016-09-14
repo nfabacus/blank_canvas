@@ -1715,6 +1715,8 @@ interact('#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6')
   ["FFFFFF", "White"]
   ]
 
-  }
+};
 
   ntc.init();
+  var colour1 = ntc.name("<%= @color[0] %>")[1];
+  document.getElementById('1').innerHTML = colour1;
