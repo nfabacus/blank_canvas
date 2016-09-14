@@ -30,10 +30,148 @@
 			background-repeat: no-repeat;
 			background-position: 10px center;
  		}
-  nav{
-    text-align: right;
-  }
 
-  h1 {
-    text-align:left;
-  }
+    body{
+      font-family: 'Playfair Display', serif;
+      color: #464242;
+     }
+
+     h1{
+       margin: 10px;
+       font-weight: normal;
+       text-align: center;
+       font-size: 50px;
+     }
+
+     h2{
+       font-family: 'Playfair Display', serif;
+       margin: 10px;
+       font-weight: normal;
+       text-align: center;
+       font-size: 35px;
+     }
+
+     .logo{
+       text-transform: initial;
+       display: inline;
+       float: left;
+       margin: 0px 30px 0px 30px;
+       text-decoration: none;
+       font-family: 'Playfair Display', serif;
+       font-size: 40px;
+       letter-spacing: 0.01em;
+       color: #464242;
+     }
+
+     .italic{
+       font-weight: bold;
+       font-style: italic;
+       color: #3a3737;
+     }
+
+     .right{
+       display: inline;
+       float: right;
+       margin: 0px 30px 0px 30px;
+     }
+
+     .menu-list{
+       color: #8a8181;
+       font-family: 'Playfair Display', serif;
+       font-size: 24px;
+     }
+
+     li a{
+       text-decoration: none;
+       color: #8a8181;
+     }
+
+     input[type="submit"]
+     {
+       background:url(images/test.svg);
+     }
+
+     .upload-field {
+      font-size: 25px;
+     }
+
+     .error {
+          color: #9F6000;
+          background-color: #FEEFB3;
+          background-image: url('http://i.imgur.com/Z8q7ww7.png');
+          border: 1px solid;
+    			margin: 10px 0px;
+    			padding: 15px 10px 15px 50px;
+    			background-repeat: no-repeat;
+    			background-position: 10px center;
+     		}
+
+     .palette {
+      margin: 10px;
+      text-align: center;
+     }
+
+     .paint {
+      border: 2px solid;
+      border-radius:50%;
+     }
+
+    input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+      font-family: 'Cormorant Garamond', serif;
+      background-color: white;
+    }
+
+     .roomView {
+       width: 45%;
+       margin:auto;
+     }
+
+     .upload {
+       margin: 10px;
+     }
+
+     .inside-box {
+       margin: 10px;
+     }
+
+     .outside-box {
+       width: 80%;
+       margin: auto;
+     }
+
+     @media screen and (max-width: 1200px) {
+        .outside-box {
+          width: 80%;
+        }
+     }
+
+     @media screen and (max-width: 1000px) {
+        .outside-box {
+          width: 80%;
+        }
+
+     }
+
+     @media screen and (max-width: 800px) {
+        .outside-box {
+          width: 80%;
+        }
+     }
+
+     .pure-u-sm-1-2 {
+       vertical-align: baseline;
+     }
+     .pure-menu-horizontal {
+       padding-top: 30px;
+     }
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+      margin-bottom: 18px;
+    }
+    .rotate {
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+      transform: rotate(90deg);
+    }
