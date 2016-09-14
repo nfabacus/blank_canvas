@@ -11,6 +11,9 @@
 
 <%=render 'switch_room' %>
 
-<form method="post" action= "<%=canva_sketches_path @canva %>">
-
 <%=render 'save_form' %>
+
+
+<form method="get" action= "<%=canvas_path%>">
+  <input type = 'submit' value = 'New Room' />
+</form>
