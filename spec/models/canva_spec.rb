@@ -9,6 +9,7 @@ describe Canva, type: :model do
                 rejecting('text/plain', 'text/xml') }
 
 
+
   it 'is not valid without a photo' do
     canva = Canva.new
     expect(canva).to have(1).error_on(:image)

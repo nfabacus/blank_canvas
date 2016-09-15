@@ -22,19 +22,18 @@
  }
 
  .error {
-      color: #9F6000;
-      background-color: #FEEFB3;
-      background-image: url('http://i.imgur.com/Z8q7ww7.png');
+      color: #464242;
       border: 1px solid;
 			margin: 10px 0px;
 			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
+			background-color: #f0f8ff;
 			background-position: 10px center;
  		}
 
     body{
       font-family: 'Playfair Display', serif;
       color: #464242;
+
      }
 
      h1{
@@ -62,6 +61,7 @@
        font-size: 40px;
        letter-spacing: 0.01em;
        color: #464242;
+
      }
 
      .italic{
@@ -95,18 +95,6 @@
      .upload-field {
       font-size: 25px;
      }
-
-     .error {
-          color: #9F6000;
-          background-color: #FEEFB3;
-          background-image: url('http://i.imgur.com/Z8q7ww7.png');
-          border: 1px solid;
-    			margin: 10px 0px;
-    			padding: 15px 10px 15px 50px;
-    			background-repeat: no-repeat;
-    			background-position: 10px center;
-     		}
-
 
      .not_bens_palette {
        text-align: center;
