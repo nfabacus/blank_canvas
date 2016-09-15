@@ -1,16 +1,18 @@
 <h1><img src="/images/flourish_left.svg"> My collection <img src="/images/flourish_right.svg"></h1>
 
 <%@canvases.each do |canva|%>
-
+  <%if canva.sketches.any?%>
     <% canva.sketches.each do |sketch| %>
+
     <div class="textCenter collectionSketch">
       <%= image_tag sketch.image_path, :class => "paint_collection_view" %>
     </div>
+
     <div class="textCenter">
       <span class="littlePhoto"><%= image_tag canva.image.url(:medium) %></span>
       <%= button_to 'delete', canva_sketch_path(id: sketch.id, canva_id: sketch.canva.id), method: :delete, :class => "photoDeleteBtn" %>
     </div>
 
     <%end%>
+  <%end%>
 <%end%>
-</div>
