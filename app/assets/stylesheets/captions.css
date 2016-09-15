@@ -1,0 +1,61 @@
+
+ *, *:after, *:before {margin: 0; padding: 0; box-sizing: border-box; position: relative;}
+
+.inside-box {
+	width: auto;
+  margin: 10px;
+  overflow: hidden;
+  font-size: 2.25vw;
+  font-family: 'Playfair Display', serif;
+	}
+
+	.caption-layout {
+    z-index: 2;
+    text-align: left;
+    position: absolute;
+    width: 800px;
+    height: 800px;
+		background: #8a8181;
+		color: white;
+		transition: 1s;
+		padding: 10px;
+    top: 80%;
+		}
+  .inside-box:hover .caption-layout {
+  	z-index: 2;
+  	top: 60%;
+  	}
+
+  .caption {
+    z-index: 1;
+    text-align: left;
+    position: absolute;
+		background-color: transparent;
+    color: #8a8181;
+    font-size: 1.5vw;
+		transition: 1s;
+		padding: 10px;
+    top: 80%;
+		}
+  .inside-box:hover .caption {
+  	z-index: 3;
+  	top: 80%;
+    color: white;
+  	}
+
+
+ .first_svg {
+   z-index: 1
+ }
+
+ .second_svg {
+   z-index: 1
+ }
+
+ .third_svg {
+   z-index: 1
+ }
+
+ .fourth_svg {
+   z-index: 1
+ }

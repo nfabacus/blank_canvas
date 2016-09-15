@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
- *= require ben.css
+ *= captions
  */
 
 
@@ -130,6 +130,7 @@
      }
 
      .paint_view svg {
+        max-width: 1000px;
         width: 100%;
      }
 
@@ -139,17 +140,10 @@
       border-radius:50%;
      }
 
-    input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-      background-color: #464242;
-      color: white;
-      height: 80px;
-      width: 385px;
-      font-family: 'Playfair Display', serif;
-      font-size: 40px;
-      border: none;
-      margin: 10px;
-      border-style: none;
-    }
+     input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+       font-family: 'Cormorant Garamond', serif;
+       background-color: white;
+     }
 
     .side_nav_button:hover {
       background-color: #2a2929;
@@ -168,10 +162,6 @@
      }
 
      .upload {
-       margin: 10px;
-     }
-
-     .inside-box {
        margin: 10px;
      }
 
@@ -298,7 +288,9 @@
       display: block;
       margin-top: 100px;
       margin-left: auto;
-      margin-right: auto }
+      margin-right: auto;
+    }
+
 
     h1 {
       margin: 30px;
@@ -339,9 +331,11 @@
     h1 img {
       width: 5%;
       height: 5%;
+      margin-bottom: 6px;
     }
     .helper_colours {
       float: right;
+      margin-right: 20px;
     }
     .user_colours {
       float: right;
