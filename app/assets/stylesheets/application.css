@@ -286,3 +286,7 @@
       display: inline-block;
       vertical-align: middle;
     }
+
+    .textLeft {
+      text-align: left;
+    }
