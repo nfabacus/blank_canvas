@@ -13,7 +13,9 @@ feature 'Canvas' do
     scenario 'user selects their favourite wireframe' do
       visit '/'
       click_button('first_svg')
-      page.attach_file "canva_image", Rails.root + "spec/assets/pic_1.jpg"
+
+
+      attach_file "canva_image", Rails.root + "spec/assets/pic_1.jpg"
       click_button "Show my colours"
       click_button "Continue"
       expect(page).to have_xpath('//svg[contains(@id, "svg2")]')
@@ -60,7 +62,7 @@ feature 'Canvas' do
 
     scenario 'user can upload a different photo' do
       pick_svg
-      page.attach_file "canva[image]", Rails.root + "spec/assets/pic_1.jpg"
+      page.attach_file 'canva_image', Rails.root + "spec/assets/pic_1.jpg"
       click_button "Show my colours"
       click_button "Try again"
       page.attach_file "canva[image]", Rails.root + "spec/assets/pic_2.jpg"
