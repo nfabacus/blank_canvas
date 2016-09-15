@@ -4,24 +4,44 @@
 .inside-box {
 	width: auto;
   margin: 10px;
+  overflow: hidden;
+  font-size: 2.25vw;
+  font-family: 'Playfair Display', serif;
 	}
+
 	.caption-layout {
+    z-index: 2;
+    text-align: left;
     position: absolute;
-		top: 80%;
-		z-index: 1;
-    opacity: 1;
+    width: 800px;
+    height: 800px;
 		background: #8a8181;
 		color: white;
-		font-family: 'Playfair Display', serif;
 		transition: 1s;
 		padding: 10px;
+    top: 80%;
 		}
+  .inside-box:hover .caption-layout {
+  	z-index: 2;
+  	top: 60%;
+  	}
 
-.inside-box:hover .caption-layout {
-  position: absolute;;
-	z-index: 1;
-	top: 60%;
-	}
+  .caption {
+    z-index: 1;
+    text-align: left;
+    position: absolute;
+		background-color: transparent;
+    color: #8a8181;
+    font-size: 1.5vw;
+		transition: 1s;
+		padding: 10px;
+    top: 80%;
+		}
+  .inside-box:hover .caption {
+  	z-index: 3;
+  	top: 80%;
+    color: white;
+  	}
 
 
  .first_svg {
