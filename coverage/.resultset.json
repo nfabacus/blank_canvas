@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/models/user.rb": [
+      "/home/ben/box/blank_canvas/app/models/user.rb": [
         1,
         null,
         null,
@@ -12,27 +12,27 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/helpers/application_helper.rb": [
+      "/home/ben/box/blank_canvas/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/helpers/canvas_helper.rb": [
+      "/home/ben/box/blank_canvas/app/helpers/canvas_helper.rb": [
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/helpers/pages_helper.rb": [
+      "/home/ben/box/blank_canvas/app/helpers/pages_helper.rb": [
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/helpers/sketches_helper.rb": [
+      "/home/ben/box/blank_canvas/app/helpers/sketches_helper.rb": [
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/helpers/users_helper.rb": [
+      "/home/ben/box/blank_canvas/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/models/canva.rb": [
+      "/home/ben/box/blank_canvas/app/models/canva.rb": [
         null,
         1,
         null,
@@ -49,7 +49,7 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/canvas_controller.rb": [
+      "/home/ben/box/blank_canvas/app/controllers/canvas_controller.rb": [
         1,
         null,
         1,
@@ -127,14 +127,14 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/application_controller.rb": [
+      "/home/ben/box/blank_canvas/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/lib/create_colour_palette.rb": [
+      "/home/ben/box/blank_canvas/lib/create_colour_palette.rb": [
         1,
         null,
         1,
@@ -147,7 +147,7 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/lib/valid_photo.rb": [
+      "/home/ben/box/blank_canvas/lib/valid_photo.rb": [
         1,
         null,
         1,
@@ -176,7 +176,7 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/lib/direct_me_wisely.rb": [
+      "/home/ben/box/blank_canvas/lib/direct_me_wisely.rb": [
         1,
         null,
         1,
@@ -194,7 +194,7 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/lib/check_for_param_presence.rb": [
+      "/home/ben/box/blank_canvas/lib/check_for_param_presence.rb": [
         1,
         null,
         1,
@@ -207,15 +207,26 @@
         null,
         null
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/pages_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
+      "/home/ben/box/blank_canvas/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/registrations_controller.rb": [
+      "/home/ben/box/blank_canvas/app/controllers/pages_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/home/ben/box/blank_canvas/app/controllers/registrations_controller.rb": [
         0,
         0,
         0,
@@ -229,7 +240,7 @@
         0,
         0
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/sketches_controller.rb": [
+      "/home/ben/box/blank_canvas/app/controllers/sketches_controller.rb": [
         0,
         0,
         0,
@@ -278,18 +289,7 @@
         0,
         0
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/users_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/models/sketch.rb": [
+      "/home/ben/box/blank_canvas/app/models/sketch.rb": [
         0,
         0,
         0,
@@ -297,7 +297,7 @@
         0,
         0
       ],
-      "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/lib/update_svg_with_colours.rb": [
+      "/home/ben/box/blank_canvas/lib/update_svg_with_colours.rb": [
         0,
         0,
         0,
@@ -335,6 +335,6 @@
         0
       ]
     },
-    "timestamp": 1473940681
+    "timestamp": 1473948276
   }
 }
