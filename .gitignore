@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
@@ -17,3 +16,6 @@ public/images/test_old.svg
 /public/system/canvas/**/*
 /public/coloured_svgs/**/*
 /coverage
+/log
+/public
+/tmp
