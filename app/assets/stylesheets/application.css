@@ -107,11 +107,17 @@
     			background-position: 10px center;
      		}
 
+
+     .not_bens_palette {
+       text-align: center;
+       font-size: 0px;
+       margin-bottom: 10px;
+      }
      .palette {
       float: left;
       width: 20%;
-      text-align: center;
-     }
+    }
+
     .palette canvas {
       display: block;
       margin: 20px 10px 10px 10px;
@@ -125,6 +131,7 @@
      .paint_view svg {
         width: 100%;
      }
+
 
      .paint {
       border: 2px solid;
@@ -203,11 +210,100 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
       margin-bottom: 18px;
     }
-    .rotate {
-      -ms-transform: rotate(90deg); /* IE 9 */
-      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-      transform: rotate(90deg);
+
+
+    .bigBtnDefault {
+      background-color: #464242 !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
     }
+
+    .bigBtnLighter {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+    }
+
+    .bigBtnLight {
+      background-color: #D1D1D1 !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnDefault {
+      background-color: #464242 !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnLighter {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnLight {
+      background-color: #D1D1D1 !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .actionNumber {
+      font-size: 40px;
+    }
+    .imageUploadDiv {
+      margin: 100px 10px 100px 10px;
+      text-align: center;
+    }
+
+    .continue-try-div {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .style_image {
+      height: auto;
+      width: 300px;
+      display: block;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto }
+    }
+
+    h1 {
+      margin: 30px;
+    }
+
     h1 img {
       width: 8%;
       height: 8%;
