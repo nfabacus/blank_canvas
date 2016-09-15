@@ -17,7 +17,7 @@
   <div class="pure-g">
     <div class="pure-menu pure-menu-horizontal">
       <div class="pure-u-sm-1-2">
-        <a href="/" class="logo">Blank <span class="italic">Canvas<span></a>
+        <a href="/" class="logo">Blank<span class="italic">Canvas<span></a>
       </div>
       <div class="pure-u-sm-1-2">
         <ul class="menu-list right">
@@ -29,11 +29,12 @@
             <li class="pure-menu-item"><%= link_to "sign in", new_user_session_path %> | </li>
             <li class="pure-menu-item"><%= link_to "sign up", new_user_registration_path %></li>
           <%end%>
-            <li class="pure-menu-item"><%= link_to "Help", pages_path%></li>
+            <li class="pure-menu-item"> | <%= link_to "help", pages_path%></li>
         </ul>
       </div>
     </div>
   </div>
+  <br>
   <hr>
 
 
