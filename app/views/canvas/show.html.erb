@@ -17,7 +17,7 @@
     <input type ="submit" value = "Try again">
   </form>
 
-<form method="post" action= "<%=canva_paint_path(@canva, room_choice: @svg)%>"
+<form action= "<%=canva_paint_path(@canva, room_choice: @svg)%> "method="post">
   <input type="hidden" name="room_choice" value="<%= @svg %>">
   <input type ="submit" value = "Continue">
 </form>

@@ -16,7 +16,9 @@ gem 'devise'
 gem 'nokogiri-styles'
 
 
+
 group :test do
+  gem 'coveralls', require: false
   gem 'poltergeist'
   gem 'rspec-rails'
   gem 'capybara'

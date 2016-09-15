@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => { registrations: 'registrations' } 
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :canvas do
-    post "paint"
-    get "paint"
+    get 'paint' => 'canvas#paint'
+    post 'paint' => 'canvas#save'
     resources :sketches
   end
   resources :users
