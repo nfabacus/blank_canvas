@@ -63,8 +63,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        8,
+        8,
         null,
         null,
         1,
@@ -208,12 +208,12 @@
         null
       ],
       "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/pages_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ],
       "/Users/jessicajones/Google Drive/PROJECTS/blank_canvas/app/controllers/registrations_controller.rb": [
         0,
@@ -335,6 +335,6 @@
         0
       ]
     },
-    "timestamp": 1473936836
+    "timestamp": 1473940681
   }
 }
