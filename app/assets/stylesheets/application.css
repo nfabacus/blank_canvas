@@ -130,6 +130,7 @@
      }
 
      .paint_view svg {
+        max-width: 1000px;
         width: 100%;
      }
 
@@ -336,13 +337,15 @@
     .textLeft {
       text-align: left;
     }
-    
+
     h1 img {
       width: 5%;
       height: 5%;
+      margin-bottom: 6px;
     }
     .helper_colours {
       float: right;
+      margin-right: 20px;
     }
     .user_colours {
       float: right;
