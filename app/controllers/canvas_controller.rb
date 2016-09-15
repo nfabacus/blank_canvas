@@ -21,26 +21,6 @@ class CanvasController < ApplicationController
      direct_me_wisely
   end
 
-  # def ajax_create
-  #   @svg = params[:room_choice]
-  #   @canva = Canva.create(canva_params)
-  #
-  #   respond_to do |format|
-  #       if @canva.save && valid_photo?
-  #         format.html { redirect_to canva_path(@canva, room_choice: @svg), notice: 'User was successfully created.' }
-  #         format.js   {}
-  #         format.json { render json: @canva.image.url, status: :created, location: canva_path(@canva,room_choice: @svg) }
-  #         if user_signed_in?
-  #           current_user.canva << @canva
-  #         end
-  #       else
-  #         format.html { redirect_to canva_path(@canva, room_choice: @svg) }
-  #       end
-  #   end
-  #
-  # end
-
-
   def show
     @svg = params[:room_choice]
     @canva = Canva.find(params[:id])
@@ -62,12 +42,27 @@ class CanvasController < ApplicationController
     end
   end
 
-  def paint
+  def save
       @canva = Canva.find(params[:canva_id])
+    if user_signed_in?
+      @user = User.find(@canva.user_id)
+    end
       @svg = params[:room_choice]
       @color = create_palette
-    render :paint
+      redirect_to canva_paint_path(@canva, room_choice: @svg)
   end
+
+  def paint
+      @canva = Canva.find(params[:canva_id])
+    if user_signed_in?
+      @user = User.find(@canva.user_id)
+    end
+      @svg = params[:room_choice]
+      @color = create_palette
+      render :paint
+  end
+
+
 
 
   private

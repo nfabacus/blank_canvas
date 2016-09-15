@@ -107,19 +107,53 @@
     			background-position: 10px center;
      		}
 
+
+     .not_bens_palette {
+       text-align: center;
+       font-size: 0px;
+       margin-bottom: 10px;
+      }
+
      .palette {
-      margin: 10px;
-      text-align: center;
+      float: left;
+      width: 20%;
+    }
+
+    .palette canvas {
+      display: block;
+      margin: 20px 10px 10px 10px;
+    }
+
+     .paint_view {
+       float: right;
+       width: 80%;
      }
+
+     .paint_view svg {
+        max-width: 1000px;
+        width: 100%;
+     }
+
 
      .paint {
       border: 2px solid;
       border-radius:50%;
      }
 
-    input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-      font-family: 'Cormorant Garamond', serif;
-      background-color: white;
+     input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+       font-family: 'Cormorant Garamond', serif;
+       background-color: white;
+     }
+
+    .side_nav_button:hover {
+      background-color: #2a2929;
+    }
+
+    input[type="submit" i].side_nav_button {
+      width: 85%;
+      font-size: 20px;
+      font-weight: bold;
+      height: 60px;
     }
 
      .roomView {
@@ -167,8 +201,146 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
       margin-bottom: 18px;
     }
-    .rotate {
-      -ms-transform: rotate(90deg); /* IE 9 */
-      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-      transform: rotate(90deg);
+
+
+    .bigBtnDefault {
+      background-color: #464242 !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+    }
+
+    .bigBtnLighter {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+    }
+
+    .bigBtnLight {
+      background-color: #D1D1D1 !important;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnDefault {
+      background-color: #464242 !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnLighter {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .mediumBtnLight {
+      background-color: #D1D1D1 !important;
+      color: white;
+      height: 80px;
+      width: 180px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+      margin: 10px;
+    }
+
+    .actionNumber {
+      font-size: 40px;
+    }
+    .imageUploadDiv {
+      margin: 100px 10px 100px 10px;
+      text-align: center;
+    }
+
+    .continue-try-div {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .style_image {
+      height: auto;
+      width: 300px;
+      display: block;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      margin: 30px;
+    }
+
+    .photoFrame {
+      width: 300px !important;
+      margin: 30px;
+    }
+
+    .photoFrame img {
+      vertical-align: middle;
+      width:inherit;
+    }
+
+    .photoLabel {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 50px;
+      line-height: 45px;
+      padding-left: 15px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+    }
+
+    section {
+      margin: 20px;
+      width: 500px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .textLeft {
+      text-align: left;
+    }
+
+    h1 img {
+      width: 5%;
+      height: 5%;
+      margin-bottom: 6px;
+    }
+    .helper_colours {
+      float: right;
+      margin-right: 20px;
+    }
+    .user_colours {
+      float: right;
+    }
+    .paintInfo {
+      margin: 8px;
+      font-family: 'Fauna One', serif;
+
     }

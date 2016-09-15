@@ -1,23 +1,25 @@
-<h1>Your colour palette</h1>
+<h1><img src="/images/flourish_left.svg">Your colour palette <img src="/images/flourish_right.svg"></h1>
 
 
-<%= image_tag @canva.image.url(:medium) %>
+<%= image_tag @canva.image.url(:medium), :class => "style_image" %>
 
-<div class="palette">
-  <canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_4" width="50" height="50" style="background-color: <%= @color[3] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_5" width="50" height="50" style="background-color: <%= @color[4] %>;border-radius:50%;"></canvas>
-  <canvas id="canvas_6" width="50" height="50" style="background-color: <%= @color[5] %>;border-radius:50%;"></canvas>
-<div>
+<div class="not_bens_palette">
+  <canvas id="canvas_1" width="50" height="50" style="background-color: <%= @color[0] %>;border-radius:0%;"></canvas>
+  <canvas id="canvas_2" width="50" height="50" style="background-color: <%= @color[1] %>;border-radius:0%;"></canvas>
+  <canvas id="canvas_3" width="50" height="50" style="background-color: <%= @color[2] %>;border-radius:0%;"></canvas>
+  <canvas id="canvas_4" width="50" height="50" style="background-color: <%= @color[3] %>;border-radius:0%;"></canvas>
+  <canvas id="canvas_5" width="50" height="50" style="background-color: <%= @color[4] %>;border-radius:0%;"></canvas>
+  <canvas id="canvas_6" width="50" height="50" style="background-color: <%= @color[5] %>;border-radius:0%;"></canvas>
+</div>
 
-  <form action = "<%=new_canva_path%>" method = 'get'>
+<div class="continue-try-div">
+    <form action = "<%=new_canva_path%>" method = 'get'>
+      <input type="hidden" name="room_choice" value="<%= @svg %>">
+      <input type ="submit" value = "Try again" class="mediumBtnLighter">
+    </form>
+
+  <form method="post" action= "<%=canva_paint_path(@canva, room_choice: @svg)%>"
     <input type="hidden" name="room_choice" value="<%= @svg %>">
-    <input type ="submit" value = "Try again">
+    <input type ="submit" value = "Continue" class = "mediumBtnDefault">
   </form>
-
-<form method="post" action= "<%=canva_paint_path(@canva, room_choice: @svg)%>"
-  <input type="hidden" name="room_choice" value="<%= @svg %>">
-  <input type ="submit" value = "Continue">
-</form>
+</div>
