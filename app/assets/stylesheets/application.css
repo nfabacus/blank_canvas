@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require ben.css
  */
 
 
@@ -106,10 +107,32 @@
     			background-position: 10px center;
      		}
 
+
+     .not_bens_palette {
+       text-align: center;
+       font-size: 0px;
+       margin-bottom: 10px;
+      }
+
      .palette {
-      margin: 10px;
-      text-align: center;
+      float: left;
+      width: 20%;
+    }
+
+    .palette canvas {
+      display: block;
+      margin: 20px 10px 10px 10px;
+    }
+
+     .paint_view {
+       float: right;
+       width: 80%;
      }
+
+     .paint_view svg {
+        width: 100%;
+     }
+
 
      .paint {
       border: 2px solid;
@@ -117,8 +140,26 @@
      }
 
     input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
-      font-family: 'Cormorant Garamond', serif;
-      background-color: white;
+      background-color: #464242;
+      color: white;
+      height: 80px;
+      width: 385px;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      border: none;
+      margin: 10px;
+      border-style: none;
+    }
+
+    .side_nav_button:hover {
+      background-color: #2a2929;
+    }
+
+    input[type="submit" i].side_nav_button {
+      width: 85%;
+      font-size: 20px;
+      font-weight: bold;
+      height: 60px;
     }
 
      .roomView {
@@ -170,11 +211,7 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
       margin-bottom: 18px;
     }
-    .rotate {
-      -ms-transform: rotate(90deg); /* IE 9 */
-      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-      transform: rotate(90deg);
-    }
+
 
     .bigBtnDefault {
       background-color: #464242 !important;
@@ -251,8 +288,17 @@
     }
 
     .continue-try-div {
-      margin-left: 27px;
       text-align: center;
+      margin-top: 80px;
+    }
+
+    .style_image {
+      height: auto;
+      width: 300px;
+      display: block;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto }
     }
 
     h1 {
@@ -289,4 +335,20 @@
 
     .textLeft {
       text-align: left;
+    }
+    
+    h1 img {
+      width: 8%;
+      height: 8%;
+    }
+    .helper_colours {
+      float: right;
+    }
+    .user_colours {
+      float: right;
+    }
+    .paintInfo {
+      margin: 8px;
+      font-family: 'Fauna One', serif;
+
     }

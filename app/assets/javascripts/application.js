@@ -17,7 +17,7 @@
 //= require interact.min.js
 
 interact('#sofa, #room_wall, #room_floor, #carpet, #cushion_one, #cushion_two, #lamp, #coffee_table, #lamp_secondary, #lamp_body, #sofa_secondary, #coffee_table_legs, #coffee_table_drawer, #flower_pot, #picture_frames, #sofa_stand, #skirting').dropzone({
-  accept: '#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6',
+  accept: '#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6, #canvas_7, #canvas_8, #canvas_9, #canvas_10',
   overlap: 0.75,
 
   ondrop: function (event) {
@@ -28,7 +28,7 @@ interact('#sofa, #room_wall, #room_floor, #carpet, #cushion_one, #cushion_two, #
 
 });
 
-interact('#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6')
+interact('#canvas_1, #canvas_2, #canvas_3, #canvas_4, #canvas_5, #canvas_6, #canvas_7, #canvas_8, #canvas_9, #canvas_10')
   .draggable({
     inertia: true,
     restrict: {
