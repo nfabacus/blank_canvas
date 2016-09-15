@@ -129,9 +129,10 @@
        width: 80%;
      }
 
-     .paint_view svg {
-        width: 100%;
-     }
+    .paint_view svg {
+      max-width: 1000px;
+      width: 100%;
+    }
 
 
      .paint {
@@ -178,25 +179,6 @@
      .outside-box {
        width: 80%;
        margin: auto;
-     }
-
-     @media screen and (max-width: 1200px) {
-        .outside-box {
-          width: 80%;
-        }
-     }
-
-     @media screen and (max-width: 1000px) {
-        .outside-box {
-          width: 80%;
-        }
-
-     }
-
-     @media screen and (max-width: 800px) {
-        .outside-box {
-          width: 80%;
-        }
      }
 
      .pure-u-sm-1-2 {
@@ -298,7 +280,7 @@
       display: block;
       margin-top: 100px;
       margin-left: auto;
-      margin-right: auto }
+      margin-right: auto
     }
 
     h1 {
@@ -336,7 +318,7 @@
     .textLeft {
       text-align: left;
     }
-    
+
     h1 img {
       width: 5%;
       height: 5%;
@@ -350,5 +332,99 @@
     .paintInfo {
       margin: 8px;
       font-family: 'Fauna One', serif;
+    }
+
+    form.button_to {
+      display: inline-block;
+      vertical-align: top;
 
     }
+
+    .textCenter {
+      text-align:center;
+    }
+
+    .paint_collection_view {
+      width: 45%;
+    }
+
+   .paint_collection_view svg {
+     max-width: 1000px;
+     width: 100%;
+   }
+
+   .collectionSketch {
+     margin: 20px;
+   }
+
+   .littlePhoto {
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+
+   .littlePhoto img {
+     width: 200px;
+     border-radius: 4px;
+   }
+
+   .photoDeleteBtn {
+     background-color: #9E9E9E !important;
+     color: white;
+     height: 80px;
+     width: 200px !important;
+     font-family: 'Playfair Display', serif;
+     font-size: 25px;
+     border: none;
+     margin: 0px !important;
+   }
+
+   @media screen and (max-width: 1200px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 55%;
+      }
+   }
+
+   @media screen and (max-width: 1000px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 65%;
+      }
+   }
+
+   @media screen and (max-width: 800px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 80%;
+      }
+
+      .littlePhoto {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .littlePhoto img {
+        width: 150px;
+      }
+   }
+
+   @media screen and (max-width: 600px) {
+     .littlePhoto {
+       margin-left: 2px;
+       margin-right: 2px;
+     }
+
+     .littlePhoto img {
+       width: 100px;
+     }
+     .photoDeleteBtn {
+       width: 150px !important;
+       height: 65px;
+       font-size: 20px;
+   }
