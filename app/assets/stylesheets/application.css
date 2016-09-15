@@ -113,6 +113,7 @@
        font-size: 0px;
        margin-bottom: 10px;
       }
+
      .palette {
       float: left;
       width: 20%;
@@ -304,6 +305,38 @@
       margin: 30px;
     }
 
+    .photoFrame {
+      width: 300px !important;
+      margin: 30px;
+    }
+
+    .photoFrame img {
+      vertical-align: middle;
+      width:inherit;
+    }
+
+    .photoLabel {
+      background-color: #9E9E9E !important;
+      color: white;
+      height: 50px;
+      line-height: 45px;
+      padding-left: 15px;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      border: none;
+    }
+
+    section {
+      margin: 20px;
+      width: 500px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .textLeft {
+      text-align: left;
+    }
+    
     h1 img {
       width: 8%;
       height: 8%;
@@ -317,4 +350,5 @@
     .paintInfo {
       margin: 8px;
       font-family: 'Fauna One', serif;
+
     }
