@@ -17,17 +17,18 @@
     height: 800px;
 		background: #8a8181;
 		color: white;
-		transition: 1s;
+		transition: 1.5s;
 		padding: 10px;
     top: 80%;
 		}
   .inside-box:hover .caption-layout {
-  	z-index: 2;
   	top: 60%;
+    transition: 0.75s;
   	}
 
   .caption {
-    z-index: 1;
+    z-index: 2;
+    opacity: 0;
     text-align: left;
     position: absolute;
 		background-color: transparent;
@@ -38,11 +39,9 @@
     top: 80%;
 		}
   .inside-box:hover .caption {
-  	z-index: 3;
-  	top: 80%;
+    opacity: 1;
     color: white;
   	}
-
 
  .first_svg {
    z-index: 1
