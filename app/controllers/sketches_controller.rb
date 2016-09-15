@@ -33,7 +33,7 @@ class SketchesController < ApplicationController
     @sketch = Sketch.find(params[:id])
     @sketch.destroy
     flash[:notice] = 'deleted'
-    redirect_to user_path
+    redirect_to current_user
   end
 
   private
