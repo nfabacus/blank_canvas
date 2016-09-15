@@ -22,19 +22,18 @@
  }
 
  .error {
-      color: #9F6000;
-      background-color: #FEEFB3;
-      background-image: url('http://i.imgur.com/Z8q7ww7.png');
+      color: #464242;
       border: 1px solid;
 			margin: 10px 0px;
 			padding: 15px 10px 15px 50px;
-			background-repeat: no-repeat;
+			background-color: #f0f8ff;
 			background-position: 10px center;
  		}
 
     body{
       font-family: 'Playfair Display', serif;
       color: #464242;
+
      }
 
      h1{
@@ -62,6 +61,7 @@
        font-size: 40px;
        letter-spacing: 0.01em;
        color: #464242;
+
      }
 
      .italic{
@@ -96,18 +96,6 @@
       font-size: 25px;
      }
 
-     .error {
-          color: #9F6000;
-          background-color: #FEEFB3;
-          background-image: url('http://i.imgur.com/Z8q7ww7.png');
-          border: 1px solid;
-    			margin: 10px 0px;
-    			padding: 15px 10px 15px 50px;
-    			background-repeat: no-repeat;
-    			background-position: 10px center;
-     		}
-
-
      .not_bens_palette {
        text-align: center;
        font-size: 0px;
@@ -129,11 +117,11 @@
        width: 80%;
      }
 
-     .paint_view svg {
-        max-width: 1000px;
-        width: 100%;
-     }
 
+    .paint_view svg {
+      max-width: 1000px;
+      width: 100%;
+    }
 
      .paint {
       border: 2px solid;
@@ -170,25 +158,6 @@
        margin: auto;
      }
 
-     @media screen and (max-width: 1200px) {
-        .outside-box {
-          width: 80%;
-        }
-     }
-
-     @media screen and (max-width: 1000px) {
-        .outside-box {
-          width: 80%;
-        }
-
-     }
-
-     @media screen and (max-width: 800px) {
-        .outside-box {
-          width: 80%;
-        }
-     }
-
      .pure-u-sm-1-2 {
        vertical-align: baseline;
      }
@@ -201,7 +170,6 @@
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
       margin-bottom: 18px;
     }
-
 
     .bigBtnDefault {
       background-color: #464242 !important;
@@ -343,5 +311,100 @@
     .paintInfo {
       margin: 8px;
       font-family: 'Fauna One', serif;
+    }
+
+    form.button_to {
+      display: inline-block;
+      vertical-align: top;
 
     }
+
+    .textCenter {
+      text-align:center;
+    }
+
+    .paint_collection_view {
+      width: 45%;
+    }
+
+   .paint_collection_view svg {
+     max-width: 1000px;
+     width: 100%;
+   }
+
+   .collectionSketch {
+     margin: 20px;
+   }
+
+   .littlePhoto {
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+
+   .littlePhoto img {
+     width: 200px;
+     border-radius: 4px;
+   }
+
+   .photoDeleteBtn {
+     background-color: #9E9E9E !important;
+     color: white;
+     height: 80px;
+     width: 200px !important;
+     font-family: 'Playfair Display', serif;
+     font-size: 25px;
+     border: none;
+     margin: 0px !important;
+   }
+
+   @media screen and (max-width: 1200px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 55%;
+      }
+   }
+
+   @media screen and (max-width: 1000px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 65%;
+      }
+   }
+
+   @media screen and (max-width: 800px) {
+      .outside-box {
+        width: 80%;
+      }
+      .paint_collection_view {
+        width: 80%;
+      }
+
+      .littlePhoto {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      .littlePhoto img {
+        width: 150px;
+      }
+   }
+
+   @media screen and (max-width: 600px) {
+     .littlePhoto {
+       margin-left: 2px;
+       margin-right: 2px;
+     }
+
+     .littlePhoto img {
+       width: 100px;
+     }
+     .photoDeleteBtn {
+       width: 150px !important;
+       height: 65px;
+       font-size: 20px;
+   }
+}
