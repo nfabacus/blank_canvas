@@ -264,7 +264,9 @@
       margin-left: auto;
       margin-right: auto;
     }
-
+    .sign_up_bb {
+      margin: 30px auto 30px auto; 
+    }
 
     h1 {
       margin: 30px;
@@ -375,8 +377,9 @@
     }
 
     .actions {
-      margin-top: 100px;
+      margin-top: 50px;
       text-align: center;
+      margin-bottom: 20px;
 
     }
 
