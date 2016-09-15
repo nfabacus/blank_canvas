@@ -30,6 +30,11 @@ If you have PostgreSQL and bundler installed the following commands can be emplo
 ## **Things we struggled with**
 
 ## **Our Successes**
+MVP + Agile practices
+Rails PostgreSQL Interact / JQueryUI Rspec/Capybara extensive use of XPath for testing CSS + Shoulda Matchers SVG / DOM Nokogiri + Local file system
+User input -> HTML Fragemnt on server and manipulate with Nokogiri to write to filesystem
+
+CRUD RESTful
 
 ## **Future Features**
 

@@ -1,0 +1,34 @@
+
+Quick and easy prototyping of colour combinations for someone feeling overwhelmed by a _Blank Canvas_.
+Allowing a user to take inspiration from a photo.
+Simplifying getting a color palette as the eye doesn't quickly pick it out.
+Reaserched similar applications, none combined the features of generating a palette, applying colours and be able to save the result.
+
+# Successes
+
+- Nokogiri, dynamic creation and manipulation of XML fragments on the server
+- InteractJS for drag and drop, with SVG events. Easier than JQueryUI
+- How to customise Rails with additional routes
+- Logging user interactions to hidden form data for submission to server through params
+- Using SRP and Open / Closed
+- Front end CSS without proprietary framework inc. CSS3 transitions
+- Using Coveralls and XPath for detailed testing (css colours)
+- More Javascript and css within Rails framework
+
+# What I struggled with
+
+- Rails routes and folder layout
+- Getting user data to the server through params
+- Loading and saving local files with FileUtils for manipulation with Nokogiri
+- Implementing Request and Response cycle in a more complex real world environment
+- Using Coveralls and XPath for detailed testing (css colours)
+- Maximisation of time vs. resources
+- Gem platform incompatabilities -> RMagick
+
+# What we would add / change
+
+- Investigate where AJAX or JSON APIs would be beneficial
+- Mobile first RWD ++
+- More rooms and draggable objects
+- Noby's AI
+- Mobile integration + extending features
