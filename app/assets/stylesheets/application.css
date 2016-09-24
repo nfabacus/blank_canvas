@@ -268,10 +268,6 @@
       margin: 30px auto 30px auto;
     }
 
-    h1 {
-      margin: 30px;
-    }
-
     .photoFrame {
       width: 300px !important;
       margin: 30px;
@@ -421,7 +417,7 @@
      height: 80px;
      width: 200px !important;
      font-family: 'Playfair Display', serif;
-     font-size: 25px;
+     font-size: 35px;
      border: none;
      margin: 0px !important;
    }
@@ -432,7 +428,6 @@
    }
 
    span {
-     float: left;
      padding: 10px;
      height: 20px;
    }
@@ -476,6 +471,134 @@
       .paint_collection_view {
         width: 65%;
       }
+
+      ul {
+        float:none;
+      }
+      ul li {
+      display: none;
+      padding: 10px;
+
+      }
+      #navButton {
+       float: right;
+       margin: 6px;
+       visibility: visible;
+      }
+
+      .showNavLi {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+
+      .hamburger-button {
+        height: 27px;
+        width:31px;
+        position: relative;
+
+        color: lightgray;
+        display: block;
+        position: absolute;
+        right: 1%;
+        width: 40px;
+        Height: 40px;
+        background-color: transparent;
+        z-index: 2;
+         -webkit-transition: right 0.5s; /* Safari */
+          transition: right 0.5s;
+
+
+      }
+
+      /*Hamburger icon open  */
+
+      .hamburger-open1 {
+          width: 31px;
+          height: 5px;
+          margin-bottom:6px;
+          background-color: lightgray;
+          border-radius: 5px;
+          position:relative;
+
+      }
+
+      .hamburger-open2 {
+          width: 31px;
+          height: 5px;
+          margin-bottom:6px;
+          background-color: lightgray;
+          border-radius: 5px;
+          position: relative;
+        transition: transform 0.5s;
+      }
+      .hamburger-open3 {
+          width: 31px;
+          height: 5px;
+          background-color: lightgray;
+          border-radius: 5px;
+          position: absolute;
+            top:11px;
+        transition: transform 0.5s;
+      }
+      .hamburger-open4 {
+          width: 31px;
+          height: 5px;
+          background-color: lightgray;
+          border-radius: 5px;
+          position: relative;
+      }
+
+      /*Hamburger icon closed  */
+      .hamburger-close1 {
+          width: 31px;
+          height: 5px;
+          margin-bottom:6px;
+          background-color: lightgray;
+          position: absolute;
+            top: 12px;
+            opacity:0;
+
+      }
+      .hamburger-close2 {
+          width: 35px;
+          height: 4px;
+          background-color: lightgray;
+          transform: rotate(-40deg);
+          position: absolute;
+            top: 12px;
+            left:-2px;
+            bottom: 0;
+        transition: transform 0.5s;
+      }
+
+      .hamburger-close3 {
+          width: 35px;
+          height: 4px;
+          background-color: lightgray;
+          transform: rotate(40deg);
+            position: absolute;
+            top: 12px;
+            left:-2px;
+            bottom: 0;
+          transition: transform 0.5s;
+      }
+
+      .hamburger-close4 {
+          width: 31px;
+          height: 5px;
+          background-color: lightgray;
+          position: absolute;
+            top: 12px;
+          opacity:0;
+      }
+
+      hr {
+        clear: both;
+      }
+
+
    }
 
    @media screen and (max-width: 800px) {
@@ -494,9 +617,14 @@
       .littlePhoto img {
         width: 150px;
       }
+
    }
 
    @media screen and (max-width: 600px) {
+     h1 {
+       font-size: 35px;
+       margin: 10px 0px 10px 0px;
+     }
      .littlePhoto {
        margin-left: 2px;
        margin-right: 2px;
@@ -511,134 +639,5 @@
        font-size: 20px;
    }
 
-   span {
-   display: block;
 
-   }
-
-   ul {
-     float:none;
-   }
-   ul li {
-   display: none;
-   padding: 10px;
-
-   }
-   #navButton {
-    float: right;
-    margin: 6px;
-    visibility: visible;
-   }
-
-   .showNavLi {
-     display: block;
-     width: 100%;
-     text-align: center;
-   }
-
-
-   .hamburger-button {
-     height: 27px;
-     width:31px;
-     position: relative;
-
-     color: lightgray;
-     display: block;
-     position: absolute;
-     right: 1%;
-     width: 40px;
-     Height: 40px;
-     background-color: transparent;
-     z-index: 2;
-      -webkit-transition: right 0.5s; /* Safari */
-       transition: right 0.5s;
-
-
-   }
-
-   /*Hamburger icon open  */
-
-   .hamburger-open1 {
-       width: 31px;
-       height: 5px;
-       margin-bottom:6px;
-       background-color: lightgray;
-       border-radius: 5px;
-       position:relative;
-
-   }
-
-   .hamburger-open2 {
-       width: 31px;
-       height: 5px;
-       margin-bottom:6px;
-       background-color: lightgray;
-       border-radius: 5px;
-       position: relative;
-     transition: transform 0.5s;
-   }
-   .hamburger-open3 {
-       width: 31px;
-       height: 5px;
-       background-color: lightgray;
-       border-radius: 5px;
-       position: absolute;
-         top:11px;
-     transition: transform 0.5s;
-   }
-   .hamburger-open4 {
-       width: 31px;
-       height: 5px;
-       background-color: lightgray;
-       border-radius: 5px;
-       position: relative;
-   }
-
-   /*Hamburger icon closed  */
-   .hamburger-close1 {
-       width: 31px;
-       height: 5px;
-       margin-bottom:6px;
-       background-color: lightgray;
-       position: absolute;
-         top: 12px;
-         opacity:0;
-
-   }
-   .hamburger-close2 {
-       width: 35px;
-       height: 4px;
-       background-color: lightgray;
-       transform: rotate(-40deg);
-       position: absolute;
-         top: 12px;
-         left:-2px;
-         bottom: 0;
-     transition: transform 0.5s;
-   }
-
-   .hamburger-close3 {
-       width: 35px;
-       height: 4px;
-       background-color: lightgray;
-       transform: rotate(40deg);
-         position: absolute;
-         top: 12px;
-         left:-2px;
-         bottom: 0;
-       transition: transform 0.5s;
-   }
-
-   .hamburger-close4 {
-       width: 31px;
-       height: 5px;
-       background-color: lightgray;
-       position: absolute;
-         top: 12px;
-       opacity:0;
-   }
-
-   hr {
-     clear: both;
-   }
 }
