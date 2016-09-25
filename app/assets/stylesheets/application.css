@@ -51,6 +51,10 @@
        font-size: 35px;
      }
 
+     p {
+       font-size: 23px;
+     }
+
      .logo{
        text-transform: initial;
        display: inline;
@@ -103,13 +107,11 @@
       }
 
      .palette {
-      float: left;
-      width: 20%;
-      text-align: center;
+      width: 150px;
+      margin-left: 4%;
     }
 
     .palette canvas {
-      display: block;
       margin: 20px 10px 10px 10px;
     }
 
@@ -309,12 +311,11 @@
       float: right;
       margin-right: 20px;
     }
-    .user_colours {
-      float: right;
-    }
+
   .paintInfo {
     width: 85%;
-    margin: 30px auto 15px auto;
+    width: 85%;
+    padding-left: 4%;
     font-family: 'Fauna One', serif;
 
   }
@@ -601,6 +602,19 @@
 
    }
 
+   @media screen and (max-width: 950px) {
+     .palette {
+         clear: left;
+         width: 100%;
+         margin: 0px;
+     }
+
+     .palette canvas {
+       display: inline-block;
+       margin: 20px 10px 10px 10px;
+     }
+   }
+
    @media screen and (max-width: 800px) {
       .outside-box {
         width: 80%;
@@ -616,6 +630,11 @@
 
       .littlePhoto img {
         width: 150px;
+      }
+
+      .paint_view {
+          clear: right;
+          width: 100%;
       }
 
    }
