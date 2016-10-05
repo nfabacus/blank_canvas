@@ -4,30 +4,48 @@
   <input type="hidden" name="room_choice" value="<%= @svg %>">
 
   <div style="height:0px;overflow:hidden">
-    <%= f.file_field :image, :id => 'fileInput', :onchange => "readURL()" %>
+    <%= f.file_field :image, :id => 'fileInput', :onchange => "read_imageURL()" %>
   </div>
 
   <div class="imageUploadDiv">
+    <ol type="1">
+      <li class="actionNumber">
+        1. <button type="button" class="bigBtnDefault" onclick="click_hiddenFileInput();">Choose an Image</button>
+        <br>
+        <img id="previewImage" src="">
+        <br>
+        <div id="fileURL"></div>
+      </li>
 
-    <span class="actionNumber">1.</span> <button type="button" class="bigBtnDefault" onclick="chooseFile();">Choose an Image</button>
-
-    <div id="fileURL"></div>
-
-    <span class="actionNumber">2.</span><%= f.submit "Show my Colours", :class => 'bigBtnLighter' %>
+      <li class="actionNumber">2.<%= f.submit "Show my Colours", :class => 'bigBtnLighter' %>
+      </li>
+    </ol>
   </div>
 
 <% end %>
 
 <script>
-  function chooseFile() {
+  function click_hiddenFileInput() {
     document.getElementById("fileInput").click();
-    var message = $("input#fileInput").val();
-    console.log(message);
   }
 
-  function readURL() {
-    var message = $("input#fileInput").val();
-    $("#fileURL").html("Photo successfully uploaded");
+  function read_imageURL() {
+    var preview = document.querySelector('img#previewImage');
+    var file = document.querySelector('input#fileInput[type=file]').files[0];
+    var reader  = new FileReader();
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+    if (file) {
+       reader.readAsDataURL(file); //reads the data as a URL
+       $("#fileURL").html("Photo successfully uploaded");
+    } else {
+       preview.src = "";
+    }
+
+
+
+
   }
 
 </script>

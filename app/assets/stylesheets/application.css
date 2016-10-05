@@ -252,7 +252,12 @@
       margin: 100px 10px 100px 10px;
       text-align: center;
     }
-
+    img#previewImage {
+      margin-left: 33px;
+    }
+    #previewImage {
+      width: 385px;
+    }
     .continue-try-div {
       text-align: center;
       margin-top: 80px;
