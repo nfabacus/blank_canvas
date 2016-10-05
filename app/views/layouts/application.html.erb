@@ -13,37 +13,54 @@
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
-<center>
-  <div class="pure-g">
-    <div class="pure-menu pure-menu-horizontal">
-      <div class="pure-u-sm-1-2">
-        <a href="/" class="logo">Blank<span class="italic">Canvas<span></a>
-      </div>
-      <div class="pure-u-sm-1-2">
-        <ul class="menu-list right">
-          <%if user_signed_in?%>
-            <li class="pure-menu-item">welcome <%=current_user.user_name%> | </li>
-            <li class="pure-menu-item"><%= link_to "my collection", current_user %> | </li>
-            <li class="pure-menu-item"><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
-          <%else%>
-            <li class="pure-menu-item"><%= link_to "sign in", new_user_session_path %> | </li>
-            <li class="pure-menu-item"><%= link_to "sign up", new_user_registration_path %></li>
-          <%end%>
-            <li class="pure-menu-item"> | <%= link_to "help", pages_path%></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <br>
-  <hr>
+  <nav id="navbar" class="navbar">
+<a href="/" class="logo">Blank<i class="italic">Canvas</i></a>
 
+    <ul>
+
+      <div id="navButton" class="hamburger-button">
+        <div id="line1" class="hamburger-open1"></div>
+        <div id="line2" class="hamburger-open2"></div>
+        <div id="line3" class="hamburger-open3"></div>
+        <div id="line4" class="hamburger-open4"></div>
+      </div>
+
+        <%if user_signed_in?%>
+          <li>welcome <%=current_user.user_name%></li>
+          <li><%= link_to "my collection", current_user %></li>
+          <li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+        <%else%>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+          <li><%= link_to "sign up", new_user_registration_path %></li>
+        <%end%>
+          <li><%= link_to "help", pages_path%></li>
+    </ul>
+  </nav>
+  <hr>
 
   <p class="alert"><%= alert %></p>
   <% flash.each do |name, msg| -%>
         <div class = 'error'><%= content_tag :div, msg, class: name %></div>
       <% end -%>
-</center>
+
 <%= yield %>
 
 </body>
 </html>
+
+<script>
+  var navBtn = $('#navButton');
+  var navList = $("ul li");
+
+  navBtn.click(function(){
+    console.log("hello");
+    navList.toggleClass('showNavLi');
+  });
+
+  $('.hamburger-button').click(function(){
+    $('#line1').toggleClass('hamburger-close1');
+    $('#line2').toggleClass('hamburger-close2');
+    $('#line3').toggleClass('hamburger-close3');
+    $('#line4').toggleClass('hamburger-close4');
+  });
+</script>
