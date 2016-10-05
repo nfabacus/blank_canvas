@@ -1,50 +1,105 @@
 
 
-<%= form_for @canva, html: {multipart: true} do |f| %>
+<!-- <%= form_for @canva, html: {multipart: true} do |f| %> -->
   <input type="hidden" name="room_choice" value="<%= @svg %>">
 
   <div style="height:0px;overflow:hidden">
-    <%= f.file_field :image, :id => 'fileInput', :onchange => "read_imageURL()" %>
+    <%= f.file_field :image, :id => 'file_upload' %>
   </div>
 
   <div class="imageUploadDiv">
     <ol type="1">
       <li class="actionNumber">
-        1. <button type="button" class="bigBtnDefault" onclick="click_hiddenFileInput();">Choose an Image</button>
+        <button type="button" class="bigBtnDefault" onclick="click_hiddenFileInput();">Choose an Image</button>
         <br>
-        <img id="previewImage" src="">
+        <canvas id="previewImage"></canvas>
+        <div id="mainColors" class="paletteToShow">
+          <canvas id="canvas_1" width="50" height="50" style="border-radius:0%;"></canvas>
+          <canvas id="canvas_2" width="50" height="50" style="border-radius:0%;"></canvas>
+          <canvas id="canvas_3" width="50" height="50" style="border-radius:0%;"></canvas>
+          <canvas id="canvas_4" width="50" height="50" style="border-radius:0%;"></canvas>
+          <canvas id="canvas_5" width="50" height="50" style="border-radius:0%;"></canvas>
+          <canvas id="canvas_6" width="50" height="50" style="border-radius:0%;"></canvas>
+        </div>
         <br>
-        <div id="fileURL"></div>
       </li>
 
-      <li class="actionNumber">2.<%= f.submit "Show my Colours", :class => 'bigBtnLighter' %>
+      <li class="actionNumber"><button id="showMyClrBtn" class="bigBtnLighter">Show My Colours</button>
+
+      <div class="continue-try-div">
+          <form action = "<%=new_canva_path%>" method = 'get'>
+            <input type="hidden" name="room_choice" value="<%= @svg %>">
+            <input type ="submit" value = "Try again" class="mediumBtnLighter">
+          </form>
+
+        <form method="post" action= "<%=canva_paint_path(@canva, room_choice: @svg)%>"
+          <input type="hidden" name="room_choice" value="<%= @svg %>">
+          <input type ="submit" value = "Continue" class = "mediumBtnDefault">
+        </form>
+      </div>
+        <!-- <%= f.submit "Show my Colours", :class => 'bigBtnLighter' %> -->
       </li>
     </ol>
   </div>
 
 <% end %>
 
-<script>
+<script type="text/javascript">
+
+  $("#showMyClrBtn").click(function(){
+    $("h1#swapTitle").html(" Your colour palette ");
+    $("#mainColors").css({"display":"block"});
+  });
+
   function click_hiddenFileInput() {
-    document.getElementById("fileInput").click();
+    $("#file_upload").click();
   }
 
-  function read_imageURL() {
-    var preview = document.querySelector('img#previewImage');
-    var file = document.querySelector('input#fileInput[type=file]').files[0];
-    var reader  = new FileReader();
-    reader.onloadend = function () {
-      preview.src = reader.result;
-    }
-    if (file) {
-       reader.readAsDataURL(file); //reads the data as a URL
-       $("#fileURL").html("Photo successfully uploaded");
-    } else {
-       preview.src = "";
-    }
+  $("#file_upload").change(function (e) {
+          var F = this.files[0];
+          var reader = new FileReader();
+          reader.onload = imageIsLoaded;
+          reader.readAsDataURL(F);
+  });
 
+  function imageIsLoaded(e) {
+    var img = new Image();
+    img.onload = function(){
+      $("#previewImage").css({"display":"block"});
+      var canvas = $('#previewImage')[0];
+      var context = canvas.getContext('2d');
+      canvas.width  = this.width;
+      canvas.height = this.height;
+      context.drawImage(this, 0, 0);
 
+      showMainColors(canvas);
 
+    };
+    img.src = e.target.result;
+  }
+
+  function rgbToHex(R, G, B) {
+    return toHex(R) + toHex(G) + toHex(B);
+  }
+
+  function toHex(n) {
+    n = parseInt(n, 10);
+    if (isNaN(n))  return "00";
+    n = Math.max(0, Math.min(n, 255));
+    return "0123456789ABCDEF".charAt((n - n % 16) / 16)  + "0123456789ABCDEF".charAt(n % 16);
+  }
+
+  function showMainColors(canvas) {
+    var colorThief = new ColorThief();
+    var mainColorsRGB = colorThief.getPalette(canvas, 10);
+    console.log('mainColorsRGB:', mainColorsRGB);
+    mainColorsRGB.forEach(function(mainClrRGB, index){
+      var R = mainClrRGB[0];
+      var G = mainClrRGB[1];
+      var B = mainClrRGB[2];
+      var mainClrHex = rgbToHex(R,G,B);
+      $('#canvas_'+index).css({"background-color":"#"+mainClrHex});
+    });
 
   }
 

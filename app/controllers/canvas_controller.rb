@@ -21,8 +21,10 @@ class CanvasController < ApplicationController
          current_user.canva << @canva
        end
        redirect_to canva_path(@canva, room_choice: @svg)
+        # redirect to canva_paint
      else
-       flash[:notice] = "Please select a valid picture"
+        flash[:notice] = "Please select a valid picture"
+        # redirect to canva_paint
        redirect_to new_canva_path(room_choice: @svg)
      end
 
@@ -32,6 +34,17 @@ class CanvasController < ApplicationController
     @svg = params[:room_choice]
     @canva = Canva.find(params[:id])
     @color = create_palette
+  end
+
+  def paint
+      @canva = Canva.find(params[:canva_id])
+    if user_signed_in?
+      @user = User.find(@canva.user_id)
+    end
+      @svg = params[:room_choice]
+      @color = params[:colors]
+      # @color = create_palette
+      render :paint
   end
 
   def save
@@ -44,15 +57,6 @@ class CanvasController < ApplicationController
       redirect_to canva_paint_path(@canva, room_choice: @svg)
   end
 
-  def paint
-      @canva = Canva.find(params[:canva_id])
-    if user_signed_in?
-      @user = User.find(@canva.user_id)
-    end
-      @svg = params[:room_choice]
-      @color = create_palette
-      render :paint
-  end
 
   private
 
