@@ -18,20 +18,20 @@ gem 'nokogiri-styles'
 
 
 group :test, :development do
-  gem 'coveralls', require: false
-  gem 'poltergeist'
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'rspec-collection_matchers'
+ gem 'coveralls', require: false
+ gem 'poltergeist'
+ gem 'rspec-rails'
+ gem 'capybara'
+ gem 'database_cleaner'
+ gem 'rspec-collection_matchers'
 end
 
 group :development do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+ gem 'byebug'
+ gem 'web-console', '~> 2.0'
+ gem 'spring'
 end
 
 group :production do
-  gem "rails_12factor"
+ gem "rails_12factor"
 end
