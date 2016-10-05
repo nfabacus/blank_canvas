@@ -17,7 +17,7 @@ gem 'nokogiri-styles'
 
 
 
-group :test do
+group :test, :development do
   gem 'coveralls', require: false
   gem 'poltergeist'
   gem 'rspec-rails'
@@ -26,11 +26,8 @@ group :test do
   gem 'rspec-collection_matchers'
 end
 
-group :development, :test do
-  gem 'byebug'
-end
-
 group :development do
+  gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
