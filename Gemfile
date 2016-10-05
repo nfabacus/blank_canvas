@@ -15,8 +15,6 @@ gem 'mini_magick'
 gem 'devise'
 gem 'nokogiri-styles'
 
-
-
 group :test, :development do
  gem 'coveralls', require: false
  gem 'poltergeist'
